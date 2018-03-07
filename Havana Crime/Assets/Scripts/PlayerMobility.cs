@@ -19,6 +19,7 @@ public class PlayerMobility : MonoBehaviour {
         Quaternion rot = Quaternion.LookRotation(transform.position - mousePosition, Vector3.forward);
         transform.rotation = rot;
         transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z);
+        rb2d.angularVelocity = 0;
 
         //Movement for vertical/horizotal axis
         float moveHorizontal = Input.GetAxis("Horizontal");
