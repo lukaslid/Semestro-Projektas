@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 
@@ -43,4 +43,10 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: test
+    uniqueID: 940477799
+    locked: 0
+  - name: Player
+    uniqueID: 3985394055
     locked: 0
