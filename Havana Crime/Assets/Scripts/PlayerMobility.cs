@@ -6,10 +6,12 @@ public class PlayerMobility : MonoBehaviour {
 
     public float speed;
     private Rigidbody2D rb2d;
+    private Animator param;
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        param = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -26,5 +28,8 @@ public class PlayerMobility : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2d.AddForce(movement * speed);
+        if (moveHorizontal != 0 || moveVertical != 0)
+            param.SetBool("Walking", true);
+        else param.SetBool("Walking", false);
     }
 }
