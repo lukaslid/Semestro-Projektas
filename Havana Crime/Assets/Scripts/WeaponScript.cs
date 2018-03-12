@@ -7,7 +7,6 @@ public class WeaponScript : MonoBehaviour {
     public Rigidbody2D projectilePrefab;
     public float fireRate;
     public float projectileSpeed;
-    public float destroyTimer;
 
     private Transform firePoint;
     private float cooldown;
