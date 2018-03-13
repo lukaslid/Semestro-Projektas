@@ -45,7 +45,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: test
+  - name: HUD
     uniqueID: 940477799
     locked: 0
   - name: Player
