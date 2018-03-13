@@ -8,6 +8,7 @@ public class WeaponScript : MonoBehaviour {
     public Rigidbody2D projectilePrefab;
     public float fireRate;
     public float projectileSpeed;
+    public int bulletCount;
 
     public int bulletCount;
     public Text bulletText;
@@ -15,11 +16,13 @@ public class WeaponScript : MonoBehaviour {
     private Transform firePoint;
     private float cooldown;
 
+    private Animator anim;
     private void Awake()
     {
         firePoint = transform.FindChild("FirePoint");
         if (firePoint == null)
             Debug.LogError("No FirePoint");
+        anim = GetComponentInParent<Animator>();
     }
 
     private void Start()
@@ -44,6 +47,29 @@ public class WeaponScript : MonoBehaviour {
             bulletCount = 50;
         }
         SetBulletText();
+                cooldown = Time.time + (1 / fireRate);
+                Fire();
+                bulletCount--;
+                
+            }
+            else
+            {
+                StartCoroutine(reload());
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(reload());
+        }
+    }
+
+    IEnumerator reload()
+    {
+        anim.SetBool("isAmmoEmpty", true);
+        yield return new WaitForSeconds(0.55f);
+        anim.SetBool("isAmmoEmpty", false);
+        bulletCount = 50;
+        
     }
 
     void Fire()

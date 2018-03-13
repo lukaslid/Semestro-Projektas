@@ -29,7 +29,7 @@ public class PlayerMobility : MonoBehaviour {
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2d.AddForce(movement * speed);
         if (moveHorizontal != 0 || moveVertical != 0)
-            param.SetBool("Walking", true);
-        else param.SetBool("Walking", false);
+            param.SetBool("isMoving", true);
+        else param.SetBool("isMoving", false);
     }
 }
