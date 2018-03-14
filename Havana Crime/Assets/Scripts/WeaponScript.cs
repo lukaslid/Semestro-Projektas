@@ -9,18 +9,21 @@ public class WeaponScript : MonoBehaviour {
     public float fireRate;
     public float projectileSpeed;
 
-    public int bulletCount;
+    public int bulletCount, maxAmmo;
     public Text bulletText;
     
 
     private Transform firePoint;
     private float cooldown;
     private bool canShoot;
-
+    Color red, black, color;
     private Animator anim;
 
     private void Awake()
     {
+        red = new Color(255, 0, 0);
+        black = new Color(0, 0, 0);
+        maxAmmo = bulletCount;
         firePoint = transform.FindChild("FirePoint");
         if (firePoint == null)
             Debug.LogError("No FirePoint");
@@ -29,9 +32,9 @@ public class WeaponScript : MonoBehaviour {
 
     private void Start()
     {
-        bulletCount = 0;
-        SetBulletText();
-        canShoot = false;
+        color = black;
+        SetBulletText(color);
+        canShoot = true;
     }
 
     void Update()
@@ -40,32 +43,35 @@ public class WeaponScript : MonoBehaviour {
         {
             if (bulletCount > 0 && canShoot)
             {
+                color = black;
                 cooldown = Time.time + (1 / fireRate);
                 bulletCount--;
                 Fire();
             }
             else
             {
+                color = red;
+                canShoot = false;
                 StartCoroutine(reload());
             }
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
+            canShoot = false;
+            color = red;
             StartCoroutine(reload());
         }
-        SetBulletText();
+        SetBulletText(color);
     }
 
     IEnumerator reload()
     {
         anim.SetBool("isAmmoEmpty", true);
-        canShoot = false;
         yield return new WaitForSeconds(0.55f);
         anim.SetBool("isAmmoEmpty", false);
-        canShoot = true;
-        bulletCount = 5;
         yield return new WaitForSeconds(0.2f);
-        
+        bulletCount = 50;
+        canShoot = true;
     }
 
     void Fire()
@@ -75,8 +81,9 @@ public class WeaponScript : MonoBehaviour {
         projectile.AddForce(transform.up * projectileSpeed);
     }
 
-    void SetBulletText()
+    void SetBulletText(Color color)
     {
-        bulletText.text = "Ammo: " + bulletCount;
+        bulletText.color = color;
+        bulletText.text = bulletCount + "/" + maxAmmo;
     }
 }
