@@ -31,6 +31,7 @@ public class WeaponScript : MonoBehaviour {
     {
         bulletCount = 0;
         SetBulletText();
+        canShoot = false;
     }
 
     void Update()
@@ -40,9 +41,8 @@ public class WeaponScript : MonoBehaviour {
             if (bulletCount > 0 && canShoot)
             {
                 cooldown = Time.time + (1 / fireRate);
-                Fire();
                 bulletCount--;
-
+                Fire();
             }
             else
             {
@@ -63,7 +63,9 @@ public class WeaponScript : MonoBehaviour {
         yield return new WaitForSeconds(0.55f);
         anim.SetBool("isAmmoEmpty", false);
         canShoot = true;
-        bulletCount = 50;        
+        bulletCount = 5;
+        yield return new WaitForSeconds(0.2f);
+        
     }
 
     void Fire()
@@ -71,7 +73,6 @@ public class WeaponScript : MonoBehaviour {
         Vector3 firePointPosition = new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z);
         Rigidbody2D projectile = Instantiate(projectilePrefab, firePointPosition, firePoint.rotation);
         projectile.AddForce(transform.up * projectileSpeed);
-
     }
 
     void SetBulletText()
