@@ -35,8 +35,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4877589198349074}
   - component: {fileID: 212043526325262512}
-  - component: {fileID: 50948636793513078}
   - component: {fileID: 114207628156379928}
+  - component: {fileID: 50222782986199792}
   - component: {fileID: 58163676715952108}
   - component: {fileID: 95585743192999378}
   m_Layer: 0
@@ -96,14 +96,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1359142652436480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0976188, y: 0.562664, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 4110720890260118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50948636793513078
+--- !u!50 &50222782986199792
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -180,9 +180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 50428013908868762, guid: 8e28c635ce1419847b23230b6186d756,
     type: 2}
-  fireRate: 4
+  fireRate: 2
   projectileSpeed: 1200
-  bulletMax: 10
+  bulletMax: 15
   bulletText: {fileID: 0}
 --- !u!212 &212043526325262512
 SpriteRenderer:

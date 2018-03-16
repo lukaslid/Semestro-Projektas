@@ -32,7 +32,7 @@ public class WeaponScript : MonoBehaviour {
         SetBulletText();
     }
 
-    //For future implementations (Reloading)
+    //For future implementations (Weapon swap)
     //private void OnEnable()
     //{
     //    isReloading = false;
