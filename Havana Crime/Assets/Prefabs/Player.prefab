@@ -180,9 +180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 50428013908868762, guid: 8e28c635ce1419847b23230b6186d756,
     type: 2}
-  fireRate: 50
-  projectileSpeed: 1000
-  bulletCount: 50
+  fireRate: 4
+  projectileSpeed: 1200
+  bulletMax: 10
   bulletText: {fileID: 0}
 --- !u!212 &212043526325262512
 SpriteRenderer:

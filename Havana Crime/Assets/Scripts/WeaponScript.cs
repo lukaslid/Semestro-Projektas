@@ -8,15 +8,14 @@ public class WeaponScript : MonoBehaviour {
     public Rigidbody2D projectilePrefab;
     public float fireRate;
     public float projectileSpeed;
-
-    public int bulletCount;
-    public Text bulletText;
-    
-
     private Transform firePoint;
     private float cooldown;
-    private bool canShoot;
 
+    //Bullet management and reloading
+    private int bulletCount;
+    public int bulletMax;
+    public Text bulletText;
+    private bool isReloading = false;
     private Animator anim;
 
     private void Awake()
@@ -29,43 +28,56 @@ public class WeaponScript : MonoBehaviour {
 
     private void Start()
     {
-        bulletCount = 0;
+        bulletCount = bulletMax;
         SetBulletText();
-        canShoot = false;
     }
+
+    //For future implementations (Reloading)
+    //private void OnEnable()
+    //{
+    //    isReloading = false;
+    //    anim.SetBool("isAmmoEmpty", false);
+    //}
 
     void Update()
     {
+        if (isReloading)
+        {
+            return;
+        }
+
+        if (bulletCount <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
         if (Input.GetButton("Fire1") && Time.time > cooldown)
         {
-            if (bulletCount > 0 && canShoot)
-            {
-                cooldown = Time.time + (1 / fireRate);
-                bulletCount--;
-                Fire();
-            }
-            else
-            {
-                StartCoroutine(reload());
-            }
+            cooldown = Time.time + (1 / fireRate);
+            bulletCount--;
+            Fire();
         }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
-            StartCoroutine(reload());
+            StartCoroutine(Reload());
+            return;
         }
+
         SetBulletText();
     }
 
-    IEnumerator reload()
+    IEnumerator Reload()
     {
+        isReloading = true;
         anim.SetBool("isAmmoEmpty", true);
-        canShoot = false;
         yield return new WaitForSeconds(0.55f);
         anim.SetBool("isAmmoEmpty", false);
-        canShoot = true;
-        bulletCount = 5;
-        yield return new WaitForSeconds(0.2f);
-        
+        bulletCount = bulletMax;
+        SetBulletText();
+        yield return new WaitForSeconds(0.25f);        
+        isReloading = false;   
     }
 
     void Fire()
