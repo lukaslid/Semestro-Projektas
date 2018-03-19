@@ -59,7 +59,7 @@ public class WeaponScript : MonoBehaviour {
             Fire();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && bulletCount != bulletMax)
         {
             StartCoroutine(Reload());
             return;
