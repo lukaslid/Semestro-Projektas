@@ -5,13 +5,21 @@ using UnityEngine;
 public class PlayerMobility : MonoBehaviour {
 
     public float speed;
+    private float defaultSpeed;
     private Rigidbody2D rb2d;
     private Animator param;
 
+
+
+    public void ChangeSpeed(float speedChange)
+    {
+        speed = defaultSpeed + speedChange;
+    }
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         param = GetComponent<Animator>();
+        defaultSpeed = speed;
     }
 
     private void FixedUpdate()
