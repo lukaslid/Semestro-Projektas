@@ -64,7 +64,6 @@ public class WeaponScript : MonoBehaviour {
             StartCoroutine(Reload());
             return;
         }
-
         SetBulletText();
     }
 
