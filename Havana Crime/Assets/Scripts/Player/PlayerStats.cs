@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour {
 
     //Player Stats
     public int currentLevel;
+    public int maxLevel;
     public int currentExp;
     public int currentHP;
     public int currentDMG;
@@ -30,7 +31,7 @@ public class PlayerStats : MonoBehaviour {
 
     private void Update()
     {
-        if(currentExp >= toLevelUp[currentLevel])
+        if ((currentLevel + 1) <= maxLevel && currentExp >= toLevelUp[currentLevel])
         {
             SetLevel(currentLevel + 1);
         }

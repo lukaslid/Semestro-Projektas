@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 61045269009163958}
   - component: {fileID: 95585743192999378}
   - component: {fileID: 114850891957074280}
+  - component: {fileID: 114219740382494304}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -71,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584634089331960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.477, y: 1.365, z: 0}
+  m_LocalPosition: {x: 0.477, y: 1.811, z: 0}
   m_LocalScale: {x: 0.20489429, y: 0.20590207, z: 0}
   m_Children:
   - {fileID: 4568919587121338}
@@ -97,8 +98,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1359142652436480}
-  m_LocalRotation: {x: 0, y: 0, z: 0.6879495, w: 0.7257586}
-  m_LocalPosition: {x: 0.18059844, y: -0.31812924, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 4110720890260118}
@@ -149,10 +150,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0.24127772}
+  m_Offset: {x: 0.48836657, y: 0.9026271}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,7 +164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19000006, y: 2.2525556}
+  m_Size: {x: 0.16673332, y: 0.88838124}
   m_EdgeRadius: 0
 --- !u!95 &95585743192999378
 Animator:
@@ -194,6 +195,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
+--- !u!114 &114219740382494304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359142652436480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8aa68cf6e2c33f48a804d39a8fa7f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 1
+  maxLevel: 5
+  currentExp: 0
+  currentHP: 0
+  currentDMG: 0
+  currentDEF: 0
+  currentSpeed: 0
+  toLevelUp: 00000000140000003200000064000000c8000000
+  HPLevels: 1e00000023000000280000002d00000032000000
+  DMGLevels: 0a0000000f00000014000000190000001e000000
+  DEFLevels: 0000000001000000020000000300000004000000
+  defaultSpeed: 5
 --- !u!114 &114619572339178374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,7 +232,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 50428013908868762, guid: 8e28c635ce1419847b23230b6186d756,
     type: 2}
   fireRate: 6
-  projectileSpeed: 1200
+  projectileSpeed: 2000
   bulletMax: 20
   bulletText: {fileID: 0}
 --- !u!114 &114850891957074280

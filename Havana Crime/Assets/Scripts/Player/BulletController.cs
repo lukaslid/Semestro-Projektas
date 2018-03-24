@@ -13,9 +13,15 @@ public class BulletController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Untagged" || coll.gameObject.tag == "Enemy")
+        if (coll.gameObject.tag == "Untagged")
         {
             Destroy(this.gameObject);
+        }
+
+        if (coll.gameObject.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+            coll.gameObject.GetComponent<EnemyStats>().Damage(GameObject.Find("Player").GetComponent<PlayerStats>().currentDMG);
         }
     }
 }

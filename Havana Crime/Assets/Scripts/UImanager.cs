@@ -13,7 +13,7 @@ public class UImanager : MonoBehaviour {
         SetText();
 
         //Adds +10 EXP
-        if(Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             player.GetComponent<PlayerStats>().currentExp += 10;
         }
@@ -30,7 +30,7 @@ public class UImanager : MonoBehaviour {
     {
         playerStats.text = "LVL: " + player.GetComponent<PlayerStats>().currentLevel + "\n" +
                            "EXP: " + player.GetComponent<PlayerStats>().currentExp + "\n" +
-                           "HP: "  + player.GetComponent<PlayerStats>().currentHP + "\n" +
+                           "HP: " + player.GetComponent<PlayerStats>().currentHP + "\n" +
                            "DMG: " + player.GetComponent<PlayerStats>().currentDMG + "\n" +
                            "DEF: " + player.GetComponent<PlayerStats>().currentDEF + "\n" +
                            "SPD: " + player.GetComponent<PlayerMobility>().speed + "\n";
