@@ -56,6 +56,7 @@ public class WeaponScript : MonoBehaviour {
         {
             cooldown = Time.time + (1 / fireRate);
             bulletCount--;
+            anim.SetBool("isShooting", true);
             Fire();
         }
 
@@ -65,6 +66,11 @@ public class WeaponScript : MonoBehaviour {
             return;
         }
         SetBulletText();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!Input.GetButton("Fire1")) anim.SetBool("isShooting", false);
     }
 
     IEnumerator Reload()
@@ -84,6 +90,7 @@ public class WeaponScript : MonoBehaviour {
         Vector3 firePointPosition = new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z);
         Rigidbody2D projectile = Instantiate(projectilePrefab, firePointPosition, firePoint.rotation);
         projectile.AddForce(transform.up * projectileSpeed);
+        
     }
 
     void SetBulletText()
