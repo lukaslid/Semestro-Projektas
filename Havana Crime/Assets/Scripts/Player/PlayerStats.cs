@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour {
 
     //Player Stats
@@ -35,8 +35,14 @@ public class PlayerStats : MonoBehaviour {
         {
             SetLevel(currentLevel + 1);
         }
+
+        if (currentHP <= 0) Die();
     }
 
+    public void Die()
+    {
+        SceneManager.LoadScene(1);
+    }
     public void SetLevel(int level)
     {
         currentLevel = level;
