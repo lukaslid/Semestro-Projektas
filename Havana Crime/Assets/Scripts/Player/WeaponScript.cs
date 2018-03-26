@@ -20,7 +20,7 @@ public class WeaponScript : MonoBehaviour {
 
     private void Awake()
     {
-        firePoint = transform.FindChild("FirePoint");
+        firePoint = transform.Find("FirePoint");
         if (firePoint == null)
             Debug.LogError("No FirePoint");
         anim = GetComponentInParent<Animator>();
