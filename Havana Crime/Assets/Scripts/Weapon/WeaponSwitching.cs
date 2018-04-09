@@ -8,9 +8,14 @@ public class WeaponSwitching : MonoBehaviour {
     public int selectedWeapon = 0;
     public Text currentWeapon;
     public string[] weaponList = { "Rifle", "Pistol", "Shotgun" };
+    public Animator anim;
+    public RuntimeAnimatorController rifle;
+    public RuntimeAnimatorController shotgun;
+    public RuntimeAnimatorController pistol;
 
     void Start()
     {
+        anim = GetComponentInParent<Animator>();
         SelectWeapon();
     }
 
@@ -64,6 +69,18 @@ public class WeaponSwitching : MonoBehaviour {
             i++;
         }
         SetCurrentWeaponText();
+        if (selectedWeapon == 0)
+        {
+            anim.runtimeAnimatorController = rifle;
+        }
+        else if (selectedWeapon == 1)
+        {
+            anim.runtimeAnimatorController = pistol;
+        }
+        else if (selectedWeapon == 2)
+        {
+            anim.runtimeAnimatorController = shotgun;
+        }
     }
 
     void SetCurrentWeaponText()
