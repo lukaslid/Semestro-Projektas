@@ -33,7 +33,9 @@ public class UImanager : MonoBehaviour {
                            "HP: " + player.GetComponent<PlayerStats>().currentHP + "\n" +
                            "DMG: " + player.GetComponent<PlayerStats>().currentDMG + "\n" +
                            "DEF: " + player.GetComponent<PlayerStats>().currentDEF + "\n" +
-                           "SPD: " + player.GetComponent<PlayerMobility>().speed + "\n";
+                           "SPD: " + player.GetComponent<PlayerMobility>().speed + "\n" +
+                           "POINTS: " + player.GetComponent<PlayerStats>().points + "\n"; 
+
 
     }
 }

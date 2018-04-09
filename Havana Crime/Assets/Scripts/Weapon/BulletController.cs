@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletController : MonoBehaviour {
 
     public float destroyTimer;
+    public bool destroyOnCollision = true;
+
 
     void Update()
     {
@@ -15,12 +17,15 @@ public class BulletController : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Untagged")
         {
-            Destroy(this.gameObject);
+            if (destroyOnCollision)
+                Destroy(this.gameObject);
         }
 
         if (coll.gameObject.tag == "Enemy")
         {
-            Destroy(this.gameObject);
+            if (destroyOnCollision)
+                Destroy(this.gameObject);
+
             coll.gameObject.GetComponent<EnemyStats>().Damage(GameObject.Find("Player").GetComponent<PlayerStats>().currentDMG);
         }
     }
