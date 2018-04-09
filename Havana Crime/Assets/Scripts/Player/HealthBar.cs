@@ -46,7 +46,7 @@ public class HealthBar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (hitpoints <= 0) SceneManager.LoadScene(1);
+        if (hitpoints <= 0) SceneManager.LoadScene("EndGame");
     }
 }
 
