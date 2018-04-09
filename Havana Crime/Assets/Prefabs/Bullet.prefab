@@ -99,7 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9687216e91a4264085ffd2fba737823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4877589198349074, guid: 0b44b09c6a790a34d9806d4d33b0e48d, type: 2}
   destroyTimer: 3
+  destroyOnCollision: 1
 --- !u!212 &212523468522680196
 SpriteRenderer:
   m_ObjectHideFlags: 1

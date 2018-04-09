@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour {
     public int currentDMG;
     public int currentDEF;
     public float currentSpeed;
+    public int points;
 
     //Level arrays
     public int[] toLevelUp;
@@ -49,6 +50,10 @@ public class PlayerStats : MonoBehaviour {
         currentHP = HPLevels[currentLevel - 1];
         currentDMG = DMGLevels[currentLevel - 1];
         currentDEF = DEFLevels[currentLevel - 1];
+        if (currentLevel % 5 == 0)
+            points += 5;
+        else
+            points += 3;
     }
 
     
