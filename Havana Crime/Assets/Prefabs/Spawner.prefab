@@ -121,10 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemy: {fileID: 4000840588460938, guid: c93e6032e83332b49a0d15512a523c0d, type: 2}
+  - enemy: {fileID: 4229836888394602, guid: 524d1c70a5dc3654ca6ae8f18f1a1174, type: 2}
     count: 2
     rate: 1
-  - enemy: {fileID: 4000840588460938, guid: c93e6032e83332b49a0d15512a523c0d, type: 2}
+  - enemy: {fileID: 4229836888394602, guid: 524d1c70a5dc3654ca6ae8f18f1a1174, type: 2}
     count: 2
     rate: 1
   timeBetweenWaves: 2
