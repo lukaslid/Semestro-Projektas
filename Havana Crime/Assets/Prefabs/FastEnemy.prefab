@@ -104,7 +104,7 @@ MonoBehaviour:
   DMG: 0
   DEF: 0
   speed: 0
-  statModifier: 0.2
+  statModifier: 0.4
 --- !u!114 &114877899412316188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +120,7 @@ MonoBehaviour:
   player: {fileID: 114207628156379928, guid: 0b44b09c6a790a34d9806d4d33b0e48d, type: 2}
   reachable: 0
   timeleft: 1
+  range: 2
 --- !u!212 &212868508488676268
 SpriteRenderer:
   m_ObjectHideFlags: 1
