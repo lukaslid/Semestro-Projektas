@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class VolumeControl : MonoBehaviour {
-    AudioSource asource;
-	// Use this for initialization
-	void Start () {
-        asource = GetComponent<AudioSource>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-       
-	}
+    public AudioMixer mixer;
+
+	public void ChangeVolume(float volume)
+    {
+        mixer.SetFloat("volume", volume);
+    }
 }
