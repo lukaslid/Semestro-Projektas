@@ -65,16 +65,16 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(Wave wave)
     {
         state = SpawnState.SPAWNING;
-<<<<<<< HEAD
+
 
         for (int i = 0; i < wave.count; i++)
-=======
+
 		if (nextWave == 0)
 			wave.enemy.transform.GetComponent<EnemyStats> ().statModifier = coefficient;
 		else
 			wave.enemy.transform.GetComponent<EnemyStats> ().statModifier += 0.2f;
         for (int i = 0; i < wave.count; i++)
->>>>>>> 912f3955583a7ba6eec4abeb2f98275f53730626
+
         {
             SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(1f / wave.rate);

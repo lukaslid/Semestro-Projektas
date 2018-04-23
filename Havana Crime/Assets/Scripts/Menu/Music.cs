@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 public class Music : MonoBehaviour {
-
+    
 	// Use this for initialization
 	void Awake () {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
