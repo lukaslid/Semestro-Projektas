@@ -19,10 +19,10 @@ public class WaveSpawner : MonoBehaviour
 
     public Wave[] waves;
     private int nextWave = 0;
+	public float coefficient;
 
     public float timeBetweenWaves = 5f;
     public float waveCountdown;
-
     private SpawnState state = SpawnState.COUNTING;
 
     // Use this for initialization
@@ -34,6 +34,19 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (state == SpawnState.WAITING) 
+		{
+			if (GameObject.FindGameObjectsWithTag ("Enemy").Length == 0) 
+			{
+				waveCountdown = timeBetweenWaves;
+				state = SpawnState.COUNTING;
+				nextWave++;
+			}
+			else 
+			{
+				return;
+			}
+		}
         if (waveCountdown <= 0)
         {
             if (state == SpawnState.COUNTING)
@@ -52,8 +65,16 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(Wave wave)
     {
         state = SpawnState.SPAWNING;
+<<<<<<< HEAD
 
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < wave.count; i++)
+=======
+		if (nextWave == 0)
+			wave.enemy.transform.GetComponent<EnemyStats> ().statModifier = coefficient;
+		else
+			wave.enemy.transform.GetComponent<EnemyStats> ().statModifier += 0.2f;
+        for (int i = 0; i < wave.count; i++)
+>>>>>>> 912f3955583a7ba6eec4abeb2f98275f53730626
         {
             SpawnEnemy(wave.enemy);
             yield return new WaitForSeconds(1f / wave.rate);
@@ -66,6 +87,6 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(Transform enemy)
     {
         Instantiate(enemy, transform.position, transform.rotation);
-        Debug.Log("Spawnig Enemy " + enemy.name);
+        Debug.Log("Spawning Enemy " + enemy.name);
     }
 }
