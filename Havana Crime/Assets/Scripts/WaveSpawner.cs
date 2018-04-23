@@ -36,7 +36,7 @@ public class WaveSpawner : MonoBehaviour
     {
 		if (state == SpawnState.WAITING) 
 		{
-			if (GameObject.FindGameObjectsWithTag ("Enemy").Length == 0) 
+			if (GameObject.FindGameObjectsWithTag ("Enemy").Length == 0 && nextWave + 1 < waves.Length) 
 			{
 				waveCountdown = timeBetweenWaves;
 				state = SpawnState.COUNTING;
