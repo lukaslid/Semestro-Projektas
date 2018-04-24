@@ -34,7 +34,7 @@ public class UImanager : MonoBehaviour {
                            "DMG: " + player.GetComponent<PlayerStats>().currentDMG + "\n" +
                            "DEF: " + player.GetComponent<PlayerStats>().currentDEF + "\n" +
                            "SPD: " + player.GetComponent<PlayerMobility>().speed + "\n" +
-                           "POINTS: " + player.GetComponent<PlayerStats>().points + "\n"; 
+                           "POINTS: " + player.GetComponent<PlayerStats>().charPoints + "\n"; 
 
 
     }

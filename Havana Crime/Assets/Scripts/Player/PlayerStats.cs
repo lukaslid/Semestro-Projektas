@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class PlayerStats : MonoBehaviour {
+public class PlayerStats : MonoBehaviour
+{
 
     //Player Stats
     public int currentLevel;
@@ -12,7 +13,7 @@ public class PlayerStats : MonoBehaviour {
     public int currentDMG;
     public int currentDEF;
     public float currentSpeed;
-    public int points;
+    public int charPoints;
 
     //Level arrays
     public int[] toLevelUp;
@@ -51,10 +52,30 @@ public class PlayerStats : MonoBehaviour {
         currentDMG = DMGLevels[currentLevel - 1];
         currentDEF = DEFLevels[currentLevel - 1];
         if (currentLevel % 5 == 0)
-            points += 5;
+            charPoints += 5;
         else
-            points += 3;
+            charPoints += 3;
     }
 
-    
+    public void SetCharacteristic(string stat)
+    {
+        if (charPoints > 0)
+        {
+            if (stat == "HP")
+            {
+                currentHP += 5;
+                charPoints--;
+            }
+            if (stat == "DMG")
+            {
+                currentDMG += 5;
+                charPoints--;
+            }
+            if (stat == "DEF")
+            {
+                currentDEF += 2;
+                charPoints--;
+            }
+        }
+    }
 }
