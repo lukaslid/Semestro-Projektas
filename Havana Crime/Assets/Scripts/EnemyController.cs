@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	public float movementSpeed;
-	public PlayerMobility player;
+	public GameObject player;
 	public bool reachable;
 	public float timeleft = 1.0f;
 	public float range = 16;
@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour {
 	void Start () {
 		reachable = false;
 		rb = GetComponent<Rigidbody2D> ();
-		player = FindObjectOfType<PlayerMobility> ();
+		player = GameObject.FindGameObjectWithTag ("Player");
 
 	}
 	void FixedUpdate() {
@@ -35,14 +35,11 @@ public class EnemyController : MonoBehaviour {
 		}
 		else {
 			//attack
-			if (!reachable) {
-				reachable = true;
-			} else {
-				timeleft -= Time.deltaTime;
-			}
+			timeleft -= Time.deltaTime;
 			if (timeleft <= 0.0f) 
 			{
-				//Attack
+				player.GetComponent<HealthBar> ().TakeDamage (100f);
+				timeleft = 2f;
 			}
 		}
 	}

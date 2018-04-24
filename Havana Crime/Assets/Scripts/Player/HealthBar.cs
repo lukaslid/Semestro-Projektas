@@ -23,7 +23,7 @@ public class HealthBar : MonoBehaviour
         ratioText.text = (ratio * 100).ToString("0") + '%';
     }
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         hitpoints -= damage;
         if (hitpoints < 0)
