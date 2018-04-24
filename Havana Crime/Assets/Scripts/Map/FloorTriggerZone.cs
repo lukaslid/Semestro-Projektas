@@ -15,11 +15,8 @@ public class FloorTriggerZone : MonoBehaviour {
     {
         if (col.tag == "Player")
         {
-            Debug.Log("bs");
             col.SendMessage((isDamaging) ? "TakeDamage" : "HealDamage", Time.deltaTime * damage);
-
             player.GetComponent<PlayerMobility>().ChangeSpeed(speedChange);
-            Debug.Log("bs");
         }
     }
 
