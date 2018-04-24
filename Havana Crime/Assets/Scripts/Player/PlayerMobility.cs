@@ -9,12 +9,12 @@ public class PlayerMobility : MonoBehaviour {
     private Rigidbody2D rb2d;
     private Animator param;
 
-
-
     public void ChangeSpeed(float speedChange)
     {
         speed = defaultSpeed + speedChange;
+        Debug.Log("bsssss");
     }
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -40,4 +40,13 @@ public class PlayerMobility : MonoBehaviour {
             param.SetBool("isMoving", true);
         else param.SetBool("isMoving", false);
     }
+
+    public IEnumerator SpeedBoostF(float[] values)
+    {
+        //values[0] - speed difference, values[1] - execution time
+        speed = defaultSpeed + values[0];
+        yield return new WaitForSeconds(values[1]);
+        speed = defaultSpeed;
+    }
+
 }
