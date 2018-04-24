@@ -70,9 +70,9 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < wave.count; i++)
 
 		if (nextWave == 0)
-			wave.enemy.transform.GetComponent<EnemyStats> ().statModifier = coefficient;
+			wave.enemy.GetComponent<EnemyStats> ().statModifier = coefficient;
 		else
-			wave.enemy.transform.GetComponent<EnemyStats> ().statModifier += 0.2f;
+			wave.enemy.GetComponent<EnemyStats> ().statModifier += 0.2f;
         for (int i = 0; i < wave.count; i++)
 
         {
