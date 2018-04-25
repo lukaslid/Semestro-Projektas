@@ -29,4 +29,21 @@ public class BulletController : MonoBehaviour {
             coll.gameObject.GetComponent<EnemyStats>().Damage(GameObject.Find("Player").GetComponent<PlayerStats>().currentDMG);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Untagged")
+        {
+            if (destroyOnCollision)
+                Destroy(this.gameObject);
+        }
+
+        if (coll.gameObject.tag == "Enemy")
+        {
+            if (destroyOnCollision)
+                Destroy(this.gameObject);
+
+            coll.gameObject.GetComponent<EnemyStats>().Damage(GameObject.Find("Player").GetComponent<PlayerStats>().currentDMG);
+        }
+    }
 }

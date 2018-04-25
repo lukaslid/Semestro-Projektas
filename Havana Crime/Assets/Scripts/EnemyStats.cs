@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour {
 
+    public int EXP;
     public int HP;
     public int DMG;
     public int DEF;
@@ -13,9 +14,11 @@ public class EnemyStats : MonoBehaviour {
     private int baseHP = 50;
     private int baseDMG = 10;
     private int baseDEF = 1;
+    private int baseEXP = 10;
 
     private void Start()
     {
+        EXP = (int)((baseEXP + EXP) * statModifier);
         HP = (int)(baseHP * statModifier);
         DMG = (int)(baseDMG * statModifier);
         DEF = (int)(baseDEF * statModifier);
@@ -27,7 +30,13 @@ public class EnemyStats : MonoBehaviour {
         if (HP <= 0)
         {
             Die();
+            AddEXP(EXP);
         }
+    }
+
+    void AddEXP(int experience)
+    {
+        GameObject.Find("Player").GetComponent<PlayerStats>().currentExp += experience;
     }
 
     void Die()
@@ -38,5 +47,6 @@ public class EnemyStats : MonoBehaviour {
     public void Damage(int damage)
     {
         HP -= damage;
+        Debug.Log("Did: " + damage);
     }
 }
