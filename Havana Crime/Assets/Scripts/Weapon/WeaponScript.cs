@@ -18,6 +18,9 @@ public class WeaponScript : MonoBehaviour {
     private bool isReloading = false;
     private Animator anim;
 
+    public AudioSource audio;
+    public AudioSource reload;
+
     private void Awake()
     {
         firePoint = transform.Find("FirePoint");
@@ -76,6 +79,7 @@ public class WeaponScript : MonoBehaviour {
     IEnumerator Reload()
     {
         isReloading = true;
+        reload.Play();
         anim.SetBool("isAmmoEmpty", true);
         yield return new WaitForSeconds(0.55f);
         anim.SetBool("isAmmoEmpty", false);
@@ -90,7 +94,7 @@ public class WeaponScript : MonoBehaviour {
         Vector3 firePointPosition = new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z);
         Rigidbody2D projectile = Instantiate(projectilePrefab, firePointPosition, firePoint.rotation);
         projectile.AddForce(transform.up * projectileSpeed);
-        
+        audio.Play();
     }
 
     void SetBulletText()

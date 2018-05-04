@@ -18,6 +18,9 @@ public class WeaponScriptShotgun : MonoBehaviour {
     private bool isReloading = false;
     private Animator anim;
 
+    public AudioSource audio;
+    public AudioSource reload;
+
     private void Awake()
     {
         firePoint = transform.Find("FirePoint");
@@ -76,6 +79,7 @@ public class WeaponScriptShotgun : MonoBehaviour {
     IEnumerator Reload()
     {
         isReloading = true;
+        reload.Play();
         anim.SetBool("isAmmoEmpty", true);
         yield return new WaitForSeconds(0.55f);
         anim.SetBool("isAmmoEmpty", false);
@@ -94,7 +98,7 @@ public class WeaponScriptShotgun : MonoBehaviour {
         projectile.AddForce(transform.up * projectileSpeed);
         projectile2.AddForce(transform.up * projectileSpeed);
         projectile3.AddForce(transform.up * projectileSpeed);
-
+        audio.Play();
     }
 
     void SetBulletText()

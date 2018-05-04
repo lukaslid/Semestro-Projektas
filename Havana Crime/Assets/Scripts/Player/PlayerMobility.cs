@@ -8,6 +8,7 @@ public class PlayerMobility : MonoBehaviour {
     private float defaultSpeed;
     private Rigidbody2D rb2d;
     private Animator param;
+    public AudioSource audio;
 
     public void ChangeSpeed(float speedChange)
     {
@@ -37,8 +38,18 @@ public class PlayerMobility : MonoBehaviour {
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb2d.AddForce(movement * speed);
         if (moveHorizontal != 0 || moveVertical != 0)
+        {
             param.SetBool("isMoving", true);
-        else param.SetBool("isMoving", false);
+            if (audio.isPlaying == false)
+            audio.Play();
+        }
+
+        else
+        {
+            param.SetBool("isMoving", false);
+            audio.Stop();
+        }
+        
     }
 
     public IEnumerator SpeedBoostF(float[] values)

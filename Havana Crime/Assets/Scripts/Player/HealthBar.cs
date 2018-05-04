@@ -7,9 +7,11 @@ public class HealthBar : MonoBehaviour
 {
     public Image currentHealthBar;
     public Text ratioText;
-
+    bool canEnd = false;
     private float hitpoints = 1000;
     private float maxHitpoints = 1000;
+
+    public AudioSource audio;
 
     private void Start()
     {
@@ -46,7 +48,17 @@ public class HealthBar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (hitpoints <= 0) SceneManager.LoadScene("EndGame");
+        
+        if (hitpoints <= 0)
+        {
+            if (audio.isPlaying == false && canEnd == false)
+            {
+                audio.Play();
+                canEnd = true;
+            }
+            if(audio.isPlaying == false) SceneManager.LoadScene("EndGame");
+        }
+       
     }
 }
 
