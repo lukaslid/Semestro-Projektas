@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using System;
 
 public class EnemyStats : MonoBehaviour {
 
@@ -31,12 +33,25 @@ public class EnemyStats : MonoBehaviour {
         {
             Die();
             AddEXP(EXP);
+            UpdateScore();
         }
     }
 
     void AddEXP(int experience)
     {
         GameObject.Find("Player").GetComponent<PlayerStats>().currentExp += experience;
+    }
+
+    void UpdateScore()
+    {
+        string scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>().text;
+        int score = Convert.ToInt32(scoreText);
+        score++;
+        GameObject.Find("Score").GetComponent<TextMeshProUGUI>().SetText(score.ToString());
+        if(Convert.ToInt32(GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>().text) < score)
+        {
+            GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>().SetText(score.ToString());
+        }
     }
 
     void Die()
