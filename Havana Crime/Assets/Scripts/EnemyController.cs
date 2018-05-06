@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-	private Rigidbody2D rb;
 	private GameObject enemy;
 	private Pathfinding.AIPath pathfinding;
 	public float movementSpeed;
@@ -17,16 +16,12 @@ public class EnemyController : MonoBehaviour {
 	void Start () {
 		Physics.IgnoreLayerCollision(this.gameObject.layer, this.gameObject.layer);
 		reachable = false;
-		rb = GetComponent<Rigidbody2D> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		enemy = gameObject;
 		pathfinding = enemy.GetComponent<Pathfinding.AIPath>();
 		enemy.GetComponent<Pathfinding.AIDestinationSetter> ().target = player.transform;
 	}
-
-	void FixedUpdate() {
-		rb.velocity = (transform.forward * movementSpeed);
-	}
+		
 	// Update is called once per frame
 	void Update () {
 		if (! pathfinding.reachedEndOfPath) {
