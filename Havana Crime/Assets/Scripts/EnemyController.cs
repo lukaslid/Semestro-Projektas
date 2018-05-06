@@ -9,10 +9,11 @@ public class EnemyController : MonoBehaviour {
 	public GameObject player;
 	public bool reachable;
 	public float timeleft = 1.0f;
-	public float range = 16;
+	public float range = 2f;
 
 	// Use this for initialization
 	void Start () {
+		Physics.IgnoreLayerCollision(this.gameObject.layer, this.gameObject.layer);
 		reachable = false;
 		rb = GetComponent<Rigidbody2D> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -24,6 +25,7 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float distance = Vector3.Distance (transform.position, player.transform.position);
+		Debug.Log (distance);
 
 		if (distance > range) {
 			// move
@@ -32,6 +34,7 @@ public class EnemyController : MonoBehaviour {
 			Quaternion q = Quaternion.AngleAxis(angle,Vector3.forward);
 			transform.rotation = Quaternion.RotateTowards(transform.rotation,q,180);
 			transform.Translate(Vector3.up * Time.deltaTime * movementSpeed);
+			timeleft = 0.5f;
 		}
 		else {
 			//attack
@@ -39,7 +42,7 @@ public class EnemyController : MonoBehaviour {
 			if (timeleft <= 0.0f) 
 			{
 				player.GetComponent<HealthBar> ().TakeDamage (100f);
-				timeleft = 2f;
+				timeleft = 1.5f;
 			}
 		}
 	}
