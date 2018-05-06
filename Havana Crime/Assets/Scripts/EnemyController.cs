@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
 	private Rigidbody2D rb;
+	private GameObject enemy;
+	private Pathfinding.AIPath pathfinding;
 	public float movementSpeed;
 	public GameObject player;
 	public bool reachable;
@@ -17,27 +19,24 @@ public class EnemyController : MonoBehaviour {
 		reachable = false;
 		rb = GetComponent<Rigidbody2D> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
-
+		enemy = gameObject;
+		pathfinding = enemy.GetComponent<Pathfinding.AIPath>();
+		enemy.GetComponent<Pathfinding.AIDestinationSetter> ().target = player.transform;
 	}
+
 	void FixedUpdate() {
 		rb.velocity = (transform.forward * movementSpeed);
 	}
 	// Update is called once per frame
 	void Update () {
-		float distance = Vector3.Distance (transform.position, player.transform.position);
-		Debug.Log (distance);
-
-		if (distance > range) {
+		if (! pathfinding.reachedEndOfPath) {
 			// move
-			Vector3 targetDir = player.transform.position - transform.position;
-			float angle = Mathf.Atan2(targetDir.y,targetDir.x) * Mathf.Rad2Deg - 90f;
-			Quaternion q = Quaternion.AngleAxis(angle,Vector3.forward);
-			transform.rotation = Quaternion.RotateTowards(transform.rotation,q,180);
-			transform.Translate(Vector3.up * Time.deltaTime * movementSpeed);
+			pathfinding.canMove = true;
 			timeleft = 0.5f;
 		}
 		else {
 			//attack
+			pathfinding.canMove = false;
 			timeleft -= Time.deltaTime;
 			if (timeleft <= 0.0f) 
 			{
