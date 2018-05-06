@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System;
+using System.IO;
 
 public class EnemyStats : MonoBehaviour {
 
@@ -51,6 +52,7 @@ public class EnemyStats : MonoBehaviour {
         if(Convert.ToInt32(GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>().text) < score)
         {
             GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>().SetText(score.ToString());
+            File.WriteAllText("highscore.txt", score.ToString());
         }
     }
 
