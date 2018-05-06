@@ -90,6 +90,9 @@ MonoBehaviour:
   reachable: 0
   timeleft: 1
   range: 2
+  damageNumber: {fileID: 1701382837694174, guid: bbc46bf188734364684f957c37165611,
+    type: 2}
+  blood: {fileID: 1460710337789560, guid: 6aa9cf844d4f3e442a00c89864ce5b29, type: 2}
 --- !u!114 &114258097459070572
 MonoBehaviour:
   m_ObjectHideFlags: 1
