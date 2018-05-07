@@ -12,6 +12,7 @@ public class WeaponScript : MonoBehaviour {
     private float cooldown;
 
     //Bullet management and reloading
+    public int damage;
     public bool ammoInfinite;
     private int bulletCurrent;    //all bullets
     public int bulletMax;       //maximum bullets
@@ -128,5 +129,13 @@ public class WeaponScript : MonoBehaviour {
             bulletText.text = "Ammo: " + bulletCurrent + " / " + bulletCapacity + "\n"
                 + "Total ammo: " + "infinite";
         }
+    }
+
+    public void Upgrade(string stat)
+    {
+        if (stat == "damage")
+            damage += 3;
+        if (stat == "size")
+            bulletCapacity += 2;
     }
 }
