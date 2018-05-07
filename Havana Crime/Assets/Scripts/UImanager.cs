@@ -20,7 +20,8 @@ public class UImanager : MonoBehaviour {
         //Resets players level to 0
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            player.GetComponent<PlayerStats>().LevelUP();
+            //player.GetComponent<PlayerStats>().LevelUP();
+            player.GetComponent<PlayerStats>().currentExp = player.GetComponent<PlayerStats>().toLevel;
         }
     }
 

@@ -24,6 +24,7 @@ public class PlayerStats : MonoBehaviour
 
     public float expModifier;
     public int toLevel;
+    public int baseEXP;
 
     private void Start()
     {
@@ -33,6 +34,8 @@ public class PlayerStats : MonoBehaviour
         //currentDEF = DEFLevels[currentLevel - 1];
         //currentSpeed = transform.GetComponent<PlayerMobility>().speed;
 
+        baseEXP = 0;
+        toLevel = 50;
         currentExp = 0;
         currentHP = 1000;
         currentDMG = 10;
@@ -74,6 +77,11 @@ public class PlayerStats : MonoBehaviour
 
     public void LevelUP()
     {
+        //Fibbonaci progression
+        //int temp = baseEXP;
+        //baseEXP = toLevel;
+        //toLevel = temp + toLevel;
+
         toLevel = toLevel + (int)(toLevel * expModifier);
         currentLevel++;
         currentHP += 100;
