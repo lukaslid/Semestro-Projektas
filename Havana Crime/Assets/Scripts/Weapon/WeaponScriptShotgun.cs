@@ -23,6 +23,16 @@ public class WeaponScriptShotgun : MonoBehaviour {
     public AudioSource audio;
     public AudioSource reload;
 
+    public void AddShotgunAmmo(int amount)
+    {
+        if (bulletCurrent + amount < bulletMax)
+        {
+            bulletCurrent += amount;
+        }
+        else
+            bulletCurrent = bulletMax;
+    }
+
     private void Awake()
     {
         firePoint = transform.Find("FirePoint");

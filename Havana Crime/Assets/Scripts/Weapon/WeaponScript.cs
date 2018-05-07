@@ -24,6 +24,16 @@ public class WeaponScript : MonoBehaviour {
     public AudioSource audio;
     public AudioSource reload;
 
+    public void AddRifleAmmo(int amount)
+    {
+        Debug.Log("veikia addRifleAmmo"); // ateina iki tos vietos bet neprideda ammo
+        if (bulletCurrent + amount < bulletMax)
+        {
+            bulletCurrent += amount;
+        }
+        else
+            bulletCurrent = bulletMax;
+    }
     private void Awake()
     {
         firePoint = transform.Find("FirePoint");

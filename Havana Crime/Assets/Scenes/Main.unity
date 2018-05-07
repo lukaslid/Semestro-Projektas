@@ -5762,6 +5762,8 @@ MonoBehaviour:
   items:
   - {fileID: 1271052986661302, guid: 3086941f88d40b844827b0350da102e4, type: 2}
   - {fileID: 1570674183232778, guid: 5ef3cd89730200c49902177381b9a7af, type: 2}
+  - {fileID: 1742389797885466, guid: b5e00deb6c7f43e45bec6a3ec4be0e38, type: 2}
+  - {fileID: 1732385980172276, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
   spawnArea: {x: 25, y: 14}
   spawnMostWait: 10
   spawnLeastWait: 4
