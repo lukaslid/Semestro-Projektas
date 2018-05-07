@@ -15,27 +15,41 @@ public class PlayerStats : MonoBehaviour
     public float currentSpeed;
     public int charPoints;
 
-    //Level arrays
-    public int[] toLevelUp;
-    public int[] HPLevels;
-    public int[] DMGLevels;
-    public int[] DEFLevels;
-    public float defaultSpeed;
+    ////Level arrays
+    //public int[] toLevelUp;
+    //public int[] HPLevels;
+    //public int[] DMGLevels;
+    //public int[] DEFLevels;
+    //public float defaultSpeed;
+
+    public float expModifier;
+    public int toLevel;
 
     private void Start()
     {
-        currentHP = 0;
-        currentHP = HPLevels[currentLevel - 1];
-        currentDMG = DMGLevels[currentLevel - 1];
-        currentDEF = DEFLevels[currentLevel - 1];
+        //currentHP = 0;
+        //currentHP = HPLevels[currentLevel - 1];
+        //currentDMG = DMGLevels[currentLevel - 1];
+        //currentDEF = DEFLevels[currentLevel - 1];
+        //currentSpeed = transform.GetComponent<PlayerMobility>().speed;
+
+        currentExp = 0;
+        currentHP = 1000;
+        currentDMG = 10;
+        currentDEF = 0;
         currentSpeed = transform.GetComponent<PlayerMobility>().speed;
     }
 
     private void Update()
     {
-        if ((currentLevel + 1) <= maxLevel && currentExp >= toLevelUp[currentLevel])
+        //if ((currentLevel + 1) <= maxLevel && currentExp >= toLevelUp[currentLevel])
+        //{
+        //    SetLevel(currentLevel + 1);
+        //}
+
+        if(currentExp >= toLevel)
         {
-            SetLevel(currentLevel + 1);
+            LevelUP();
         }
 
         if (currentHP <= 0) Die();
@@ -45,12 +59,26 @@ public class PlayerStats : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    public void SetLevel(int level)
+
+    //public void SetLevel(int level)
+    //{
+    //    currentLevel = level;
+    //    currentHP = HPLevels[currentLevel - 1];
+    //    currentDMG = DMGLevels[currentLevel - 1];
+    //    currentDEF = DEFLevels[currentLevel - 1];
+    //    if (currentLevel % 5 == 0)
+    //        charPoints += 5;
+    //    else
+    //        charPoints += 3;
+    //}
+
+    public void LevelUP()
     {
-        currentLevel = level;
-        currentHP = HPLevels[currentLevel - 1];
-        currentDMG = DMGLevels[currentLevel - 1];
-        currentDEF = DEFLevels[currentLevel - 1];
+        toLevel = toLevel + (int)(toLevel * expModifier);
+        currentLevel++;
+        currentHP += 100;
+        currentDMG += 5;
+        currentDEF += 3;
         if (currentLevel % 5 == 0)
             charPoints += 5;
         else

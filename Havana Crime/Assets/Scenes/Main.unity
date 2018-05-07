@@ -1068,7 +1068,7 @@ MonoBehaviour:
   fireRate: 1
   projectileSpeed: 2000
   damageModifier: 2
-  bulletMax: 24
+  bulletMax: 10
   bulletCapacity: 6
   bulletText: {fileID: 1777440469}
   audio: {fileID: 183680109}
@@ -4902,7 +4902,7 @@ MonoBehaviour:
   fireRate: 2
   projectileSpeed: 2000
   damageModifier: 1
-  ammoInfinite: 0
+  ammoInfinite: 1
   bulletMax: 80
   bulletCapacity: 10
   bulletText: {fileID: 1777440469}
@@ -5342,16 +5342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1b042987f8a11458f5ddc3dbde1c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
-  - enemy: {fileID: 4337566568843592, guid: ae76ae2039e9e984ab2816cb1be18051, type: 2}
-    count: 1
-    rate: 1
-  - enemy: {fileID: 4337566568843592, guid: ae76ae2039e9e984ab2816cb1be18051, type: 2}
-    count: 2
-    rate: 1
-  - enemy: {fileID: 4337566568843592, guid: ae76ae2039e9e984ab2816cb1be18051, type: 2}
-    count: 3
-    rate: 1
+  enemy: {fileID: 4337566568843592, guid: ae76ae2039e9e984ab2816cb1be18051, type: 2}
   coefficient: 0.4
   timeBetweenWaves: 5
   waveCountdown: 5
@@ -7357,18 +7348,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 1
-  maxLevel: 5
+  maxLevel: 0
   currentExp: 0
   currentHP: 0
   currentDMG: 0
   currentDEF: 0
   currentSpeed: 0
   charPoints: 0
-  toLevelUp: 00000000140000003200000064000000c8000000
-  HPLevels: 1e00000023000000280000002d00000032000000
-  DMGLevels: 0a0000000f00000014000000190000001e000000
-  DEFLevels: 0000000001000000020000000300000004000000
-  defaultSpeed: 5
+  expModifier: 1.2
+  toLevel: 50
 --- !u!114 &1719449449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8076,6 +8064,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114454141431322396, guid: eb904207e2173b446bd29fb0b859917d,
+        type: 2}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb904207e2173b446bd29fb0b859917d, type: 2}
   m_IsPrefabParent: 0

@@ -52,7 +52,7 @@ public class WeaponScriptShotgun : MonoBehaviour {
             return;
         }
 
-        if (bulletCurrent <= 0 && bulletMax != 0)
+        if (bulletCurrent <= 0 && bulletMax > 0)
         {
             StartCoroutine(Reload());
             return;
@@ -66,7 +66,7 @@ public class WeaponScriptShotgun : MonoBehaviour {
             Fire();
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletCurrent != bulletCapacity)
+        if (Input.GetKeyDown(KeyCode.R) && bulletCurrent != bulletCapacity && bulletMax > 0)
         {
             StartCoroutine(Reload());
             return;
@@ -93,8 +93,16 @@ public class WeaponScriptShotgun : MonoBehaviour {
         }
         else
         {
-            bulletMax -= (bulletCapacity - bulletCurrent);
-            bulletCurrent += (bulletCapacity - bulletCurrent);
+            if ((bulletMax + bulletCurrent) <= bulletCapacity)
+            {
+                bulletCurrent = bulletMax;
+                bulletMax = 0;                
+            }
+            else
+            {
+                bulletMax -= (bulletCapacity - bulletCurrent);
+                bulletCurrent += (bulletCapacity - bulletCurrent);
+            }
         }
         SetBulletText();
         yield return new WaitForSeconds(0.25f);

@@ -15,7 +15,10 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
+        maxHitpoints = GameObject.Find("Player").GetComponent<PlayerStats>().currentHP;
+        hitpoints = GameObject.Find("Player").GetComponent<PlayerStats>().currentHP;
         UpdateHealthBar();
+
     }
 
     private void UpdateHealthBar()
