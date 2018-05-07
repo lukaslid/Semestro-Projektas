@@ -1829,6 +1829,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbbe6020d1dcaad4b997edd87d69d301, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &413841269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 413841271}
+  - component: {fileID: 413841270}
+  m_Layer: 0
+  m_Name: Bounds
+  m_TagString: Map
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &413841270
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413841269}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.011282, y: 0.13293171}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 55.642704, y: 36.850655}
+  m_EdgeRadius: 0
+--- !u!4 &413841271
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413841269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.0161176, y: -3.890305, z: -0.359375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &417957746 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1424499466454186, guid: e29610ff22c7a034caf10c8413951b50,
@@ -2216,6 +2270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1719449447}
+  boundBox: {fileID: 413841270}
 --- !u!1 &639580318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4774,10 +4829,10 @@ MonoBehaviour:
   items:
   - {fileID: 1271052986661302, guid: 3086941f88d40b844827b0350da102e4, type: 2}
   - {fileID: 1570674183232778, guid: 5ef3cd89730200c49902177381b9a7af, type: 2}
-  spawnArea: {x: 20, y: 20}
-  spawnMostWait: 5
-  spawnLeastWait: 2
-  startWait: 1
+  spawnArea: {x: 25, y: 14}
+  spawnMostWait: 10
+  spawnLeastWait: 4
+  startWait: 5
   stop: 0
 --- !u!61 &1485740101
 BoxCollider2D:
@@ -9272,12 +9327,12 @@ Prefab:
     - target: {fileID: 61111368359075758, guid: 73acae60ca144e74694bd17ec7414aac,
         type: 2}
       propertyPath: m_Offset.y
-      value: -0.02679798
+      value: -0.038003538
       objectReference: {fileID: 0}
     - target: {fileID: 61111368359075758, guid: 73acae60ca144e74694bd17ec7414aac,
         type: 2}
       propertyPath: m_Size.y
-      value: 0.33281827
+      value: 0.31040716
       objectReference: {fileID: 0}
     - target: {fileID: 61111368359075758, guid: 73acae60ca144e74694bd17ec7414aac,
         type: 2}
