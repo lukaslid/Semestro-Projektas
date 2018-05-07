@@ -7,19 +7,12 @@ public class WaveSpawner : MonoBehaviour
 
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
-    //define wave
-    [System.Serializable]
-    public class Wave
-    {
-        //public string name;
-        public Transform enemy;
-        public int count;
-        public float rate;
-    }
+	public Transform enemy;
 
-    public Wave[] waves;
     private int nextWave = 0;
 	public float coefficient;
+	private float rate = 1;
+	private int count = 1;
 
     public float timeBetweenWaves = 5f;
     public float waveCountdown;
@@ -36,7 +29,7 @@ public class WaveSpawner : MonoBehaviour
     {
 		if (state == SpawnState.WAITING) 
 		{
-			if (GameObject.FindGameObjectsWithTag ("Enemy").Length == 0 && nextWave + 1 < waves.Length) 
+			if (GameObject.FindGameObjectsWithTag ("Enemy").Length == 0) 
 			{
 				waveCountdown = timeBetweenWaves;
 				state = SpawnState.COUNTING;
@@ -51,8 +44,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if (state == SpawnState.COUNTING)
             {
-                //start spawn
-                StartCoroutine(SpawnWave(waves[nextWave]));
+				StartCoroutine(SpawnWave());
             }
         }
         else
@@ -62,22 +54,18 @@ public class WaveSpawner : MonoBehaviour
 
     }
 
-    IEnumerator SpawnWave(Wave wave)
+    IEnumerator SpawnWave()
     {
         state = SpawnState.SPAWNING;
-
-
-        for (int i = 0; i < wave.count; i++)
-
+		count++;
 		if (nextWave == 0)
-			wave.enemy.GetComponent<EnemyStats> ().statModifier = coefficient;
+			enemy.GetComponent<EnemyStats> ().statModifier = coefficient;
 		else
-			wave.enemy.GetComponent<EnemyStats> ().statModifier += 0.2f;
-        for (int i = 0; i < wave.count; i++)
-
+			enemy.GetComponent<EnemyStats> ().statModifier += 0.2f;
+		for (int i = 0; i < count; i++)
         {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f / wave.rate);
+            SpawnEnemy(enemy);
+            yield return new WaitForSeconds(1f / rate);
         }
 
         state = SpawnState.WAITING;

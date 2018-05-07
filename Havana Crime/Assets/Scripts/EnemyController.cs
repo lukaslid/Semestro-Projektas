@@ -11,14 +11,13 @@ public class EnemyController : MonoBehaviour
     public GameObject player;
     public bool reachable;
     public float timeleft = 1.0f;
-    public float range = 2f;
+	public float range;
     public GameObject damageNumber;
     public GameObject blood;
 
     // Use this for initialization
     void Start()
     {
-        Physics.IgnoreLayerCollision(this.gameObject.layer, this.gameObject.layer);
         reachable = false;
         player = GameObject.FindGameObjectWithTag("Player");
         enemy = gameObject;
@@ -29,7 +28,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pathfinding.reachedEndOfPath)
+		float distance = Vector3.Distance(transform.position,player.transform.position);
+		Debug.Log(distance);
+		Debug.Log ("Range = " +  range);
+		if (distance.CompareTo(range) == 1)
         {
             // move
             pathfinding.canMove = true;
@@ -43,7 +45,7 @@ public class EnemyController : MonoBehaviour
             if (timeleft <= 0.0f)
             {
                 player.GetComponent<HealthBar>().TakeDamage(100f);
-                timeleft = 1.5f;
+                timeleft = 2f;
             }
         }
     }

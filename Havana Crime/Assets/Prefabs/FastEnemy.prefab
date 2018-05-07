@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114535106466290730}
   - component: {fileID: 114602901773801094}
   - component: {fileID: 114146802723976604}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FastEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 5
+  maxSpeed: 10
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -174,7 +174,7 @@ MonoBehaviour:
   player: {fileID: 0}
   reachable: 0
   timeleft: 1
-  range: 2
+  range: 2.5
   damageNumber: {fileID: 1701382837694174, guid: bbc46bf188734364684f957c37165611,
     type: 2}
   blood: {fileID: 1460710337789560, guid: 6aa9cf844d4f3e442a00c89864ce5b29, type: 2}
