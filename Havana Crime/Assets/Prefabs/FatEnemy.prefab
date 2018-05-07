@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114662343324356698}
   - component: {fileID: 114258097459070572}
   - component: {fileID: 114045128680237666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FatEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   player: {fileID: 0}
   reachable: 0
   timeleft: 1
-  range: 2
+  range: 3
   damageNumber: {fileID: 1701382837694174, guid: bbc46bf188734364684f957c37165611,
     type: 2}
   blood: {fileID: 1460710337789560, guid: 6aa9cf844d4f3e442a00c89864ce5b29, type: 2}
@@ -108,7 +108,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 6
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
