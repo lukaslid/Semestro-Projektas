@@ -12,7 +12,7 @@ public class WeaponScriptShotgun : MonoBehaviour {
     private float cooldown;
 
     //Bullet management and reloading
-    public int damage;
+    public float damageModifier;
     private int bulletCurrent;    //all bullets
     public int bulletMax;       //maximum bullets
     public int bulletCapacity;  //1 round capacity
@@ -88,14 +88,13 @@ public class WeaponScriptShotgun : MonoBehaviour {
         anim.SetBool("isAmmoEmpty", false);
         if (bulletMax >= bulletCapacity)
         {
-
+            bulletMax -= (bulletCapacity - bulletCurrent);
             bulletCurrent = bulletCapacity;
-            bulletMax -= bulletCapacity;
         }
         else
         {
-            bulletCurrent = bulletMax;
-            bulletMax -= bulletMax;
+            bulletMax -= (bulletCapacity - bulletCurrent);
+            bulletCurrent += (bulletCapacity - bulletCurrent);
         }
         SetBulletText();
         yield return new WaitForSeconds(0.25f);
@@ -120,11 +119,11 @@ public class WeaponScriptShotgun : MonoBehaviour {
             + "Total ammo: " + bulletMax;
     }
 
-    public void Upgrade(string stat)
-    {
-        if (stat == "damage")
-            damage += 3;
-        if (stat == "size")
-            bulletCapacity += 1;
-    }
+    //public void Upgrade(string stat)
+    //{
+    //    if (stat == "damage")
+    //        damage += 3;
+    //    if (stat == "size")
+    //        bulletCapacity += 1;
+    //}
 }

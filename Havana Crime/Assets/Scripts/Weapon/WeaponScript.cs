@@ -12,7 +12,7 @@ public class WeaponScript : MonoBehaviour {
     private float cooldown;
 
     //Bullet management and reloading
-    public int damage;
+    public float damageModifier;
     public bool ammoInfinite;
     private int bulletCurrent;    //all bullets
     public int bulletMax;       //maximum bullets
@@ -95,13 +95,13 @@ public class WeaponScript : MonoBehaviour {
         {
             if (bulletMax >= bulletCapacity)
             {
+                bulletMax -= (bulletCapacity - bulletCurrent);
                 bulletCurrent = bulletCapacity;
-                bulletMax -= bulletCapacity;
             }
             else
             {
-                bulletCurrent = bulletMax;
-                bulletMax -= bulletMax;
+                bulletMax -= (bulletCapacity - bulletCurrent);
+                bulletCurrent += (bulletCapacity - bulletCurrent);
             }
         }
         SetBulletText();
@@ -131,11 +131,11 @@ public class WeaponScript : MonoBehaviour {
         }
     }
 
-    public void Upgrade(string stat)
-    {
-        if (stat == "damage")
-            damage += 3;
-        if (stat == "size")
-            bulletCapacity += 2;
-    }
+    //public void Upgrade(string stat)
+    //{
+    //    if (stat == "damage")
+    //        damage += 3;
+    //    if (stat == "size")
+    //        bulletCapacity += 2;
+    //}
 }
