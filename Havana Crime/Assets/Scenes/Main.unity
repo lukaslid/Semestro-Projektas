@@ -1027,7 +1027,9 @@ MonoBehaviour:
     type: 2}
   fireRate: 1
   projectileSpeed: 2000
-  bulletMax: 20
+  ammoInfinite: 0
+  bulletMax: 24
+  bulletCapacity: 6
   bulletText: {fileID: 1777440469}
   audio: {fileID: 183680109}
   reload: {fileID: 183680110}
@@ -1640,7 +1642,7 @@ RectTransform:
   - {fileID: 1655917384}
   - {fileID: 76297758}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.347}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1747,8 +1749,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1550785579}
   - {fileID: 688737010}
+  - {fileID: 1550785579}
   - {fileID: 146305986}
   m_Father: {fileID: 1719449456}
   m_RootOrder: 0
@@ -2260,7 +2262,7 @@ Transform:
   - {fileID: 1745407417}
   - {fileID: 108507182}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &671652977
 Prefab:
@@ -2532,7 +2534,7 @@ Transform:
   m_Children:
   - {fileID: 719812504}
   m_Father: {fileID: 404609374}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714638823 stripped
 GameObject:
@@ -2590,6 +2592,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4395599010908246, guid: fbbe6020d1dcaad4b997edd87d69d301,
     type: 2}
   m_PrefabInternal: {fileID: 1593008044}
+--- !u!1001 &866726581
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.348728
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.7932934
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.20097959
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682388552363392, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 482b276c7fe8a084882f10b348b8da11, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &883371027 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4220678921091226, guid: e29610ff22c7a034caf10c8413951b50,
@@ -3494,7 +3538,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202611615
 GameObject:
@@ -4295,7 +4339,8 @@ MonoBehaviour:
     type: 2}
   fireRate: 2
   projectileSpeed: 2000
-  bulletMax: 10
+  bulletMax: 80
+  bulletCapacity: 10
   bulletText: {fileID: 1777440469}
   audio: {fileID: 1399701237}
   reload: {fileID: 1399701238}
@@ -4628,7 +4673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1424086434
 Transform:
   m_ObjectHideFlags: 0
@@ -5143,7 +5188,7 @@ Transform:
   - {fileID: 1761079177}
   - {fileID: 1972379127}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1487613874 stripped
 Transform:
@@ -5294,7 +5339,7 @@ Transform:
   - {fileID: 1077555903}
   - {fileID: 2000615893}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1499490863
 BoxCollider2D:
@@ -5566,7 +5611,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1549882604
 Prefab:
@@ -5639,7 +5684,7 @@ Transform:
   m_Children:
   - {fileID: 2068815917}
   m_Father: {fileID: 404609374}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1558319417
 Prefab:
@@ -6078,7 +6123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 60.5, y: -221.9}
+  m_AnchoredPosition: {x: 60.5, y: -265.4}
   m_SizeDelta: {x: 160, y: 209.8}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1596961307
@@ -6463,7 +6508,8 @@ MonoBehaviour:
     type: 2}
   fireRate: 6
   projectileSpeed: 2000
-  bulletMax: 40
+  bulletMax: 80
+  bulletCapacity: 40
   bulletText: {fileID: 1777440469}
   audio: {fileID: 1690393292}
   reload: {fileID: 1690393293}
@@ -6848,7 +6894,7 @@ Transform:
   - {fileID: 404609374}
   - {fileID: 2000079609}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &1719449457
 SortingGroup:
@@ -7382,6 +7428,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.2489944
       objectReference: {fileID: 0}
+    - target: {fileID: 1460217487097584, guid: eb904207e2173b446bd29fb0b859917d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb904207e2173b446bd29fb0b859917d, type: 2}
   m_IsPrefabParent: 0
@@ -7906,7 +7956,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -10, y: -10}
-  m_SizeDelta: {x: 220.5, y: 48.8}
+  m_SizeDelta: {x: 220.5, y: 80.99}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1777440469
 MonoBehaviour:
@@ -9462,7 +9512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30.25, y: -21.5}
+  m_AnchoredPosition: {x: 30.25, y: -53.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141282444

@@ -167,7 +167,9 @@ MonoBehaviour:
   DMG: 0
   DEF: 0
   speed: 0
-  statModifier: 1
+  statModifier: 1.4000001
+  displayNumber: {fileID: 114540013009463588, guid: bbc46bf188734364684f957c37165611,
+    type: 2}
 --- !u!212 &212631874301148234
 SpriteRenderer:
   m_ObjectHideFlags: 1

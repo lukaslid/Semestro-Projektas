@@ -12,8 +12,10 @@ public class WeaponScript : MonoBehaviour {
     private float cooldown;
 
     //Bullet management and reloading
-    private int bulletCount;
-    public int bulletMax;
+    public bool ammoInfinite;
+    private int bulletCurrent;    //all bullets
+    public int bulletMax;       //maximum bullets
+    public int bulletCapacity;  //1 round capacity
     public Text bulletText;
     private bool isReloading = false;
     private Animator anim;
@@ -31,7 +33,7 @@ public class WeaponScript : MonoBehaviour {
 
     private void Start()
     {
-        bulletCount = bulletMax;
+        bulletCurrent = bulletCapacity;
         SetBulletText();
     }
 
@@ -49,21 +51,21 @@ public class WeaponScript : MonoBehaviour {
             return;
         }
 
-        if (bulletCount <= 0)
+        if (bulletCurrent <= 0 && bulletMax != 0)
         {
             StartCoroutine(Reload());
             return;
         }
 
-        if (Input.GetButton("Fire1") && Time.time > cooldown)
+        if (Input.GetButton("Fire1") && Time.time > cooldown && bulletCurrent > 0)
         {
             cooldown = Time.time + (1 / fireRate);
-            bulletCount--;
+            bulletCurrent--;
             anim.SetBool("isShooting", true);
             Fire();
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletCount != bulletMax)
+        if (Input.GetKeyDown(KeyCode.R) && bulletCurrent != bulletCapacity)
         {
             StartCoroutine(Reload());
             return;
@@ -83,7 +85,24 @@ public class WeaponScript : MonoBehaviour {
         anim.SetBool("isAmmoEmpty", true);
         yield return new WaitForSeconds(0.55f);
         anim.SetBool("isAmmoEmpty", false);
-        bulletCount = bulletMax;
+        if (ammoInfinite)
+        {
+            bulletCurrent = bulletCapacity;
+            bulletMax -= bulletCapacity;
+        }
+        else
+        {
+            if (bulletMax >= bulletCapacity)
+            {
+                bulletCurrent = bulletCapacity;
+                bulletMax -= bulletCapacity;
+            }
+            else
+            {
+                bulletCurrent = bulletMax;
+                bulletMax -= bulletMax;
+            }
+        }
         SetBulletText();
         yield return new WaitForSeconds(0.25f);        
         isReloading = false;   
@@ -99,6 +118,15 @@ public class WeaponScript : MonoBehaviour {
 
     void SetBulletText()
     {
-        bulletText.text = "Ammo: " + bulletCount;
+        if (ammoInfinite == false)
+        {
+            bulletText.text = "Ammo: " + bulletCurrent + " / " + bulletCapacity + "\n"
+                + "Total ammo: " + bulletMax;
+        }
+        else
+        {
+            bulletText.text = "Ammo: " + bulletCurrent + " / " + bulletCapacity + "\n"
+                + "Total ammo: " + "infinite";
+        }
     }
 }

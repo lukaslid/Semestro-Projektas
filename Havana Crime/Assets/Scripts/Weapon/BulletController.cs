@@ -32,6 +32,7 @@ public class BulletController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
+        //Debug.Log("Collides On Trigger");
         if (coll.gameObject.tag == "Untagged")
         {
             if (destroyOnCollision)
@@ -43,6 +44,7 @@ public class BulletController : MonoBehaviour {
             if (destroyOnCollision)
                 Destroy(this.gameObject);
 
+            //Debug.Log("Enters tag enemy");
             coll.gameObject.GetComponent<EnemyStats>().Damage(GameObject.Find("Player").GetComponent<PlayerStats>().currentDMG);
         }
     }

@@ -64,6 +64,5 @@ public class EnemyStats : MonoBehaviour {
     public void Damage(int damage)
     {
         HP -= damage;
-        Debug.Log("Did: " + damage);
     }
 }
