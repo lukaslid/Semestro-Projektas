@@ -35,12 +35,21 @@ public class EnemyStats : MonoBehaviour {
             Die();
             AddEXP(EXP);
             UpdateScore();
+            UpdateCount();
         }
     }
 
     void AddEXP(int experience)
     {
         GameObject.Find("Player").GetComponent<PlayerStats>().currentExp += experience;
+    }
+
+    void UpdateCount()
+    {
+        string count = GameObject.Find("MobCount").GetComponent<TextMeshProUGUI>().text.ToString();
+        int counter = Convert.ToInt32(count);
+        counter--;
+        GameObject.Find("MobCount").GetComponent<TextMeshProUGUI>().SetText(counter.ToString());
     }
 
     void UpdateScore()
