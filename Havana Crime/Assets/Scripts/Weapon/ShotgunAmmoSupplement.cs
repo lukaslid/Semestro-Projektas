@@ -5,14 +5,19 @@ using UnityEngine;
 public class ShotgunAmmoSupplement : MonoBehaviour
 {
     public int amount;
+    public GameObject shotgun;
+
+    private void Start()
+    {
+        shotgun = GameObject.Find("Weapon_Shotgun");
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Player")
         {
             Destroy(this.gameObject);
-            //GameObject.Find("Weapon_Shotgun").GetComponent<WeaponScriptShotgun>().AddShotgunAmmo(amount);
-            // jeigu ne shotgun rankoje tada crashina
+            shotgun.GetComponent<WeaponScriptShotgun>().bulletMax += 5;
         }
     }
 }

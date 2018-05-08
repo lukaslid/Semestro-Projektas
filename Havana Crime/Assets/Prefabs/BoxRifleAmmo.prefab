@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 61805027788287796}
   m_Layer: 0
   m_Name: BoxRifleAmmo
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daad6bf0b5cea941bbe5fea17ced9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
+  amount: 10
+  rifle: {fileID: 0}
 --- !u!210 &210379107452798340
 SortingGroup:
   m_ObjectHideFlags: 1
