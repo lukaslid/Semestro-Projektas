@@ -99,7 +99,7 @@ public class WeaponScript : MonoBehaviour {
         if (ammoInfinite)
         {
             bulletCurrent = bulletCapacity;
-            bulletMax -= bulletCapacity;
+            bulletMax = bulletCapacity;
         }
         else
         {
