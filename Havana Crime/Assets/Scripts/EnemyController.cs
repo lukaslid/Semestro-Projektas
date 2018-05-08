@@ -14,10 +14,13 @@ public class EnemyController : MonoBehaviour
 	public float range;
     public GameObject damageNumber;
     public GameObject blood;
+    public string monster;
+    Animator anim;
 
     // Use this for initialization
     void Start()
     {
+        anim = GetComponent<Animator>();
         reachable = false;
         player = GameObject.FindGameObjectWithTag("Player");
         enemy = gameObject;
@@ -36,6 +39,7 @@ public class EnemyController : MonoBehaviour
             // move
             pathfinding.canMove = true;
             timeleft = 0.5f;
+            anim.SetBool("attack", false);
         }
         else
         {
@@ -46,6 +50,7 @@ public class EnemyController : MonoBehaviour
             {
                 player.GetComponent<HealthBar>().TakeDamage(100f);
                 timeleft = 2f;
+                anim.SetBool("attack", true);
             }
         }
     }

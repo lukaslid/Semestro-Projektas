@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114662343324356698}
   - component: {fileID: 114258097459070572}
   - component: {fileID: 114045128680237666}
+  - component: {fileID: 95845464369058782}
   m_Layer: 10
   m_Name: FatEnemy
   m_TagString: Enemy
@@ -61,6 +62,23 @@ CircleCollider2D:
   m_Offset: {x: 0.03730266, y: -0.030991117}
   serializedVersion: 2
   m_Radius: 0.28691447
+--- !u!95 &95845464369058782
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767474823295784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ce06247263fc5146a0a3a9f7c0ecafc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114045128680237666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,6 +111,7 @@ MonoBehaviour:
   damageNumber: {fileID: 1701382837694174, guid: bbc46bf188734364684f957c37165611,
     type: 2}
   blood: {fileID: 1460710337789560, guid: 6aa9cf844d4f3e442a00c89864ce5b29, type: 2}
+  monster: 
 --- !u!114 &114258097459070572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,9 +186,7 @@ MonoBehaviour:
   DMG: 0
   DEF: 0
   speed: 0
-  statModifier: 1.4000001
-  displayNumber: {fileID: 114540013009463588, guid: bbc46bf188734364684f957c37165611,
-    type: 2}
+  statModifier: 1.2
 --- !u!212 &212631874301148234
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -204,7 +221,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 21102b93473253944ada8f7672093bcf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99a710b777ed1e8498bc611de0c1bf57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
