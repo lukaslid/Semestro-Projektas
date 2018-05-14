@@ -22,6 +22,12 @@ public class BulletController : MonoBehaviour
                 Destroy(this.gameObject);
         }
 
+        if (coll.gameObject.tag == "Obstacle")
+        {
+            if (destroyOnCollision)
+                Destroy(this.gameObject);
+        }
+
         if (coll.gameObject.tag == "Enemy")
         {
             if (destroyOnCollision)

@@ -5,6 +5,8 @@ using UnityEngine;
 using System;
 using System.IO;
 
+
+
 public class EnemyStats : MonoBehaviour {
 
     public int EXP;
@@ -13,6 +15,7 @@ public class EnemyStats : MonoBehaviour {
     public int DEF;
     public float speed;
     public float statModifier;
+    public GameObject groundBlood;
 
     private int baseHP = 50;
     private int baseDMG = 10;
@@ -68,10 +71,17 @@ public class EnemyStats : MonoBehaviour {
     void Die()
     {
         Destroy(this.gameObject);
+        Wait(0.35f);
+        Instantiate(groundBlood, transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.RandomRange(0, 360)));
     }
 
     public void Damage(int damage)
     {
         HP -= damage;
+    }
+
+    IEnumerator Wait(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
     }
 }

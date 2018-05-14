@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
 
 public class EnemyController : MonoBehaviour
 {
@@ -12,8 +13,9 @@ public class EnemyController : MonoBehaviour
     public bool reachable;
     public float timeleft = 1.0f;
 	public float range;
-    public GameObject damageNumber;
+    public GameObject dmgText;
     public GameObject blood;
+    public GameObject groundBlood;
     public string monster;
     Animator anim;
 
@@ -26,6 +28,7 @@ public class EnemyController : MonoBehaviour
         enemy = gameObject;
         pathfinding = enemy.GetComponent<Pathfinding.AIPath>();
         enemy.GetComponent<Pathfinding.AIDestinationSetter>().target = player.transform;
+        GameObject canvas = GameObject.Find("Canvas");
     }
 
     // Update is called once per frame
@@ -61,8 +64,16 @@ public class EnemyController : MonoBehaviour
         if (col.gameObject.tag.Equals("Bullet"))
         {
             Instantiate(blood, transform.position, Quaternion.identity);
-            Instantiate(damageNumber, transform.position, Quaternion.identity);
+            Instantiate(dmgText, transform.position, Quaternion.identity);
+          
+            Wait(0.5f);
+            Instantiate(groundBlood, transform.position, Quaternion.Euler(0, 0, Random.RandomRange(0, 360)));
         }
+    }
+
+    IEnumerator Wait(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
     }
 }
 

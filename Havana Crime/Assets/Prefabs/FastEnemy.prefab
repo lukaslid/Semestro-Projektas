@@ -176,7 +176,9 @@ MonoBehaviour:
   DMG: 0
   DEF: 0
   speed: 0
-  statModifier: 0.6
+  statModifier: 0.4
+  groundBlood: {fileID: 1994265722614450, guid: 7257b314cd793b446a50ff9066dba86c,
+    type: 2}
 --- !u!114 &114877899412316188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,9 +195,10 @@ MonoBehaviour:
   reachable: 0
   timeleft: 1
   range: 2.5
-  damageNumber: {fileID: 1701382837694174, guid: bbc46bf188734364684f957c37165611,
-    type: 2}
+  dmgText: {fileID: 1542286562858584, guid: bedef536e64151540a0a0f1dec64f5e8, type: 2}
   blood: {fileID: 1460710337789560, guid: 6aa9cf844d4f3e442a00c89864ce5b29, type: 2}
+  groundBlood: {fileID: 1151765735867360, guid: 59006f5ed9b8185428cf9cdcb124be6f,
+    type: 2}
   monster: zombieController
 --- !u!212 &212868508488676268
 SpriteRenderer:

@@ -1499,11 +1499,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.4738371
+      value: 4.95
       objectReference: {fileID: 0}
     - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.119071
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1527,11 +1527,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1732385980172276, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_Name
       value: BoxShotgunAmmo (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.27958226
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
@@ -2558,11 +2562,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.833355
+      value: 5.93
       objectReference: {fileID: 0}
     - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.9126724
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2586,7 +2590,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4692233718062952, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
@@ -5852,11 +5856,13 @@ MonoBehaviour:
   - {fileID: 1570674183232778, guid: 5ef3cd89730200c49902177381b9a7af, type: 2}
   - {fileID: 1742389797885466, guid: b5e00deb6c7f43e45bec6a3ec4be0e38, type: 2}
   - {fileID: 1732385980172276, guid: 3ce77a3d5184caa42b7c86780ac580b3, type: 2}
+  obstacles: []
   spawnArea: {x: 25, y: 14}
   spawnMostWait: 10
   spawnLeastWait: 4
   startWait: 5
   stop: 0
+  SpawnPermission: 1
 --- !u!61 &1485740101
 BoxCollider2D:
   m_ObjectHideFlags: 0
