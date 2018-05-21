@@ -12,7 +12,7 @@ public class CanPauseGameTest {
 		menu.charMenu = new GameObject ();
 		menu.Pause ();
 		menu.Resume ();
-		if (! menu)
+		if (! menu.isPaused)
 			menu.Pause ();
 		Assert.AreEqual (menu.isPaused, true); //palyginami gautas atsakymas su tuo kuri tikimes gauti
 	}
