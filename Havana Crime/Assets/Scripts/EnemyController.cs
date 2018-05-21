@@ -35,8 +35,6 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
 		float distance = Vector3.Distance(transform.position,player.transform.position);
-		Debug.Log(distance);
-		Debug.Log ("Range = " +  range);
 		if (distance.CompareTo(range) == 1)
         {
             // move
