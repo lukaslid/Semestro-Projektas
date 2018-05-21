@@ -1137,6 +1137,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealthBar: {fileID: 0}
   ratioText: {fileID: 0}
+  hitpoints: 1000
+  maxHitpoints: 1000
+  damaged: 0
   audio: {fileID: 82348466589002696}
 --- !u!114 &114854012025351842
 MonoBehaviour:

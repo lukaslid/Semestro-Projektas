@@ -5,15 +5,11 @@ using UnityEngine;
 public class ShotgunAmmoSupplement : MonoBehaviour
 {
     public int amount;
-    private GameObject shotgun;
-
-    private void Start()
-    {
-        shotgun = GameObject.Find("Weapon_Shotgun");
-    }
+    public GameObject shotgun;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        //shotgun = GameObject.Find("Weapon_Shotgun");
         if (col.tag == "Player")
         {
             Destroy(this.gameObject);

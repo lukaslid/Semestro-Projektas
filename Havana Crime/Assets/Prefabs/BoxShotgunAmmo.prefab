@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 5
-  shotgun: {fileID: 0}
+  shotgun: {fileID: 1629922698417278, guid: 7dc195fe859f1454f9379e1e9882e5df, type: 2}
 --- !u!210 &210109324184832140
 SortingGroup:
   m_ObjectHideFlags: 1

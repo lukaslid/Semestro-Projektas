@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507495996933804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.536165, y: 2.6029027, z: 0}
+  m_LocalPosition: {x: 4.1597733, y: 3.6757255, z: 0}
   m_LocalScale: {x: 0.3147042, y: 0.3147042, z: 0.3147042}
   m_Children:
   - {fileID: 4209141870568886}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 10
-  rifle: {fileID: 0}
+  rifle: {fileID: 1169282421055536, guid: 7dc195fe859f1454f9379e1e9882e5df, type: 2}
 --- !u!114 &114532416045515960
 MonoBehaviour:
   m_ObjectHideFlags: 1

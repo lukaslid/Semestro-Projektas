@@ -199,6 +199,7 @@ MonoBehaviour:
   blood: {fileID: 1460710337789560, guid: 6aa9cf844d4f3e442a00c89864ce5b29, type: 2}
   groundBlood: {fileID: 1151765735867360, guid: 59006f5ed9b8185428cf9cdcb124be6f,
     type: 2}
+  damageText: {fileID: 1105248948455164, guid: 2c81be2aa255a8c448432c5230dd9f8b, type: 2}
   monster: zombieController
 --- !u!212 &212868508488676268
 SpriteRenderer:

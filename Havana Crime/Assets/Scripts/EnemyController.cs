@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
+using TMPro;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,9 +14,9 @@ public class EnemyController : MonoBehaviour
     public bool reachable;
     public float timeleft = 1.0f;
 	public float range;
-    public GameObject dmgText;
     public GameObject blood;
     public GameObject groundBlood;
+    public GameObject damageText;
     public string monster;
     Animator anim;
 
@@ -62,8 +63,14 @@ public class EnemyController : MonoBehaviour
         if (col.gameObject.tag.Equals("Bullet"))
         {
             Instantiate(blood, transform.position, Quaternion.identity);
-            Instantiate(dmgText, transform.position, Quaternion.identity);
-          
+            //Instantiate(dmgText, transform.position, Quaternion.identity);
+
+            damageText.GetComponent<TextMeshPro>().text = player.GetComponent<PlayerStats>().currentDMG.ToString();
+            var x = Instantiate(damageText, transform.position, Quaternion.identity);
+            x.transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up, (5f * Time.deltaTime));
+
+            //damageText.transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up, (1.5f * Time.deltaTime));
+
             Wait(0.5f);
             Instantiate(groundBlood, transform.position, Quaternion.Euler(0, 0, Random.RandomRange(0, 360)));
         }
