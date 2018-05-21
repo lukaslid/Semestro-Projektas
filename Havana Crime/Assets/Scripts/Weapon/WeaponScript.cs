@@ -75,9 +75,9 @@ public class WeaponScript : MonoBehaviour {
 
         if (Input.GetButton("Fire1") && Time.time > cooldown && bulletCurrent > 0)
         {
-            cooldown = Time.time + (1 / fireRate);
-            bulletCurrent--;
             anim.SetBool("isShooting", true);
+            cooldown = Time.time + (1 / fireRate);
+            bulletCurrent--;            
             Fire();
         }
 

@@ -1712,6 +1712,11 @@ Prefab:
       propertyPath: bulletMax
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114932258034158394, guid: 7dc195fe859f1454f9379e1e9882e5df,
+        type: 2}
+      propertyPath: pistol
+      value: 
+      objectReference: {fileID: 9100000, guid: a8b3835dd66ec094d980232f884ae6a2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7dc195fe859f1454f9379e1e9882e5df, type: 2}
   m_IsPrefabParent: 0
@@ -2000,6 +2005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bdbd9f56d4cd84d81d40aca9981399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   charMenu: {fileID: 1105709444}
 --- !u!114 &310604435
 MonoBehaviour:
@@ -5422,7 +5428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1424086434
 Transform:
   m_ObjectHideFlags: 0
@@ -8121,7 +8127,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1460217487097584, guid: eb904207e2173b446bd29fb0b859917d, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114454141431322396, guid: eb904207e2173b446bd29fb0b859917d,
         type: 2}
