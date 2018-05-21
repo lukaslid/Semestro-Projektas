@@ -8,21 +8,18 @@ public class HealthBar : MonoBehaviour
     public Image currentHealthBar;
     public Text ratioText;
     bool canEnd = false;
-    private float hitpoints = 1000;
-    private float maxHitpoints = 1000;
+    public float hitpoints = 1000;
+    public float maxHitpoints = 1000;
     public bool damaged;
 
     public AudioSource audio;
 
     private void Start()
     {
-        maxHitpoints = GameObject.Find("Player").GetComponent<PlayerStats>().currentHP;
-        hitpoints = GameObject.Find("Player").GetComponent<PlayerStats>().currentHP;
         UpdateHealthBar();
-
     }
 
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         float ratio = hitpoints / maxHitpoints;
         currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
