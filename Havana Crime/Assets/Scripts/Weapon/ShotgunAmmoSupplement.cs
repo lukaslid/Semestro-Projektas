@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShotgunAmmoSupplement : MonoBehaviour
 {
     public int amount;
-    public GameObject shotgun;
+    private GameObject shotgun;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class ShotgunAmmoSupplement : MonoBehaviour
         if (col.tag == "Player")
         {
             Destroy(this.gameObject);
-            shotgun.GetComponent<WeaponScriptShotgun>().bulletMax += 5;
+            shotgun.GetComponent<WeaponScriptShotgun>().bulletMax += amount;
         }
     }
 }
