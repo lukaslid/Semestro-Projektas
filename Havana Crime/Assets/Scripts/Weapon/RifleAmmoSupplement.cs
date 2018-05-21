@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RifleAmmoSupplement : MonoBehaviour {
+public class RifleAmmoSupplement : MonoBehaviour
+{
 
     public int amount;
-    public GameObject rifle;
+    private GameObject rifle;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class RifleAmmoSupplement : MonoBehaviour {
         if (col.tag == "Player")
         {
             Destroy(this.gameObject);
-            rifle.GetComponent<WeaponScript>().bulletMax += 10;
+            rifle.GetComponent<WeaponScript>().bulletMax += amount;
         }
     }
 }

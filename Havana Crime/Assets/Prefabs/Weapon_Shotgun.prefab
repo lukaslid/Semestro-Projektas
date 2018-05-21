@@ -9,34 +9,34 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1132797258426766}
+  m_RootGameObject: {fileID: 1073305998615822}
   m_IsPrefabParent: 1
---- !u!1 &1132797258426766
+--- !u!1 &1073305998615822
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4707561934783376}
-  - component: {fileID: 114472868532117468}
-  - component: {fileID: 82930644998362424}
-  - component: {fileID: 82708282113112960}
+  - component: {fileID: 4646646371650782}
+  - component: {fileID: 114934963497712078}
+  - component: {fileID: 82859165806060286}
+  - component: {fileID: 82210007761230482}
   m_Layer: 0
-  m_Name: Weapon_Rifle
+  m_Name: Weapon_Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1397553257114788
+--- !u!1 &1612300725158120
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4506115624862102}
+  - component: {fileID: 4111126191276636}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -44,39 +44,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4506115624862102
+--- !u!4 &4111126191276636
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1397553257114788}
+  m_GameObject: {fileID: 1612300725158120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
-  m_Father: {fileID: 4707561934783376}
+  m_Father: {fileID: 4646646371650782}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4707561934783376
+--- !u!4 &4646646371650782
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1132797258426766}
+  m_GameObject: {fileID: 1073305998615822}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.477, y: 1.811, z: 0}
-  m_LocalScale: {x: 0.20489429, y: 0.20590207, z: 0}
+  m_LocalScale: {x: 0.20489, y: 0.2059, z: 0}
   m_Children:
-  - {fileID: 4506115624862102}
+  - {fileID: 4111126191276636}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82708282113112960
+--- !u!82 &82210007761230482
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1132797258426766}
+  m_GameObject: {fileID: 1073305998615822}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -151,16 +151,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!82 &82930644998362424
+--- !u!82 &82859165806060286
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1132797258426766}
+  m_GameObject: {fileID: 1073305998615822}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 23e02fc2fb182af489d6e6a78e865313, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c12c5161171685f40aef1af28f948015, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -231,25 +231,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114472868532117468
+--- !u!114 &114934963497712078
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1132797258426766}
+  m_GameObject: {fileID: 1073305998615822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cb6dbcfe3a7d384887820ce7543ba6f, type: 3}
+  m_Script: {fileID: 11500000, guid: a53f26dde74e17f408c0e04a0caf042e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 50428013908868762, guid: 8e28c635ce1419847b23230b6186d756,
+  projectilePrefab: {fileID: 50835392388828496, guid: a44804480ef960f49aa411b3a98ccad6,
     type: 2}
-  fireRate: 6
+  fireRate: 1
   projectileSpeed: 2000
-  damageModifier: 1
-  ammoInfinite: 0
-  bulletMax: 80
-  bulletCapacity: 40
+  damageModifier: 2
+  bulletMax: 10
+  bulletCapacity: 6
   bulletText: {fileID: 0}
-  audio: {fileID: 82930644998362424}
-  reload: {fileID: 82708282113112960}
+  audio: {fileID: 82859165806060286}
+  reload: {fileID: 82210007761230482}

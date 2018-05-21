@@ -112,7 +112,7 @@ public class WeaponScript : MonoBehaviour {
             {
                 if ((bulletMax + bulletCurrent) <= bulletCapacity)
                 {
-                    bulletCurrent = bulletMax;
+                    bulletCurrent += bulletMax;
                     bulletMax = 0;
                 }
                 else
