@@ -75,14 +75,10 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy(Transform enemy)
+    public void SpawnEnemy(Transform enemy)
     {
         Instantiate(enemy, transform.position, transform.rotation);
         Debug.Log("Spawning Enemy " + enemy.name);
-        string count = GameObject.Find("MobCount").GetComponent<TextMeshProUGUI>().text.ToString();
-        int counter = Convert.ToInt32(count);
-        counter++;
-        GameObject.Find("MobCount").GetComponent<TextMeshProUGUI>().SetText(counter.ToString());
     }
 
     void UpdateWaveCount()

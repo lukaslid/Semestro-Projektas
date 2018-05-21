@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacteristicsMenu : MonoBehaviour {
 
-    public static bool isPaused = false;
+    public bool isPaused = false;
     public GameObject charMenu;
 
     void Update()

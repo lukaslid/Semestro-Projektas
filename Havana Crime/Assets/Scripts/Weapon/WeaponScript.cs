@@ -24,6 +24,11 @@ public class WeaponScript : MonoBehaviour {
     public AudioSource audio;
     public AudioSource reload;
 
+	public void Construct(int a)
+	{
+		bulletCurrent = a;
+	}
+
     public void AddRifleAmmo(int amount)
     {
         Debug.Log("veikia addRifleAmmo"); // ateina iki tos vietos bet neprideda ammo
