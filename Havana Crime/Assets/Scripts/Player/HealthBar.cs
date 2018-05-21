@@ -10,6 +10,7 @@ public class HealthBar : MonoBehaviour
     bool canEnd = false;
     private float hitpoints = 1000;
     private float maxHitpoints = 1000;
+    public bool damaged;
 
     public AudioSource audio;
 
@@ -30,6 +31,8 @@ public class HealthBar : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        damaged = true;
+
         hitpoints -= damage;
         if (hitpoints < 0)
         {
@@ -37,6 +40,11 @@ public class HealthBar : MonoBehaviour
             Debug.Log("Dead");
         }
         UpdateHealthBar();
+    }
+
+    private void Update()
+    {
+        GameObject.Find("Blood").GetComponent<BloodManager>().DamageFlash(damaged);
     }
 
     private void HealDamage(float heal)
