@@ -69,7 +69,6 @@ public class EnemyController : MonoBehaviour
             var x = Instantiate(damageText, transform.position, Quaternion.identity);
             x.transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up, (5f * Time.deltaTime));
 
-            //damageText.transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up, (1.5f * Time.deltaTime));
 
             Wait(0.5f);
             Instantiate(groundBlood, transform.position, Quaternion.Euler(0, 0, Random.RandomRange(0, 360)));

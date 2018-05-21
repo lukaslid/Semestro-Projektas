@@ -13,7 +13,6 @@ public class PlayerMobility : MonoBehaviour {
     public void ChangeSpeed(float speedChange)
     {
         speed = defaultSpeed + speedChange;
-        Debug.Log("bsssss");
     }
 
     private void Start()
