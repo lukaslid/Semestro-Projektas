@@ -49,21 +49,21 @@ public class EnemyStats : MonoBehaviour {
 
     void UpdateCount()
     {
-        string count = GameObject.Find("MobCount").GetComponent<TextMeshProUGUI>().text.ToString();
+        string count = GameObject.Find("MobCount").GetComponent<TextMesh>().text.ToString();
         int counter = Convert.ToInt32(count);
         counter--;
-        GameObject.Find("MobCount").GetComponent<TextMeshProUGUI>().SetText(counter.ToString());
+        GameObject.Find("MobCount").GetComponent<TextMesh>().text = (counter.ToString());
     }
 
     void UpdateScore()
     {
-        string scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>().text;
+        string scoreText = GameObject.Find("Score").GetComponent<TextMesh>().text;
         int score = Convert.ToInt32(scoreText);
         score++;
-        GameObject.Find("Score").GetComponent<TextMeshProUGUI>().SetText(score.ToString());
-        if(Convert.ToInt32(GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>().text) < score)
+        GameObject.Find("Score").GetComponent<TextMesh>().text = (score.ToString());
+        if(Convert.ToInt32(GameObject.Find("Highscore").GetComponent<TextMesh>().text) < score)
         {
-            GameObject.Find("Highscore").GetComponent<TextMeshProUGUI>().SetText(score.ToString());
+            GameObject.Find("Highscore").GetComponent<TextMesh>().text = (score.ToString());
             File.WriteAllText("highscore.txt", score.ToString());
         }
     }
@@ -72,7 +72,7 @@ public class EnemyStats : MonoBehaviour {
     {
         Destroy(this.gameObject);
         Wait(0.35f);
-        Instantiate(groundBlood, transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.RandomRange(0, 360)));
+        Instantiate(groundBlood, transform.position, Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360)));
     }
 
     public void Damage(int damage)
