@@ -300,6 +300,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealthBar: {fileID: 0}
   ratioText: {fileID: 0}
+  hitpoints: 1000
+  maxHitpoints: 1000
+  damaged: 0
   audio: {fileID: 82176411224442662}
 --- !u!114 &114197415935520820
 MonoBehaviour:
@@ -320,7 +323,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1328073940386146}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8aa68cf6e2c33f48a804d39a8fa7f5d, type: 3}
   m_Name: 
