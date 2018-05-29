@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd813b0431ba32e4cb70d06ed731bad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 50
-  player: {fileID: 0}
+  movementSpeed: 10
+  player: {fileID: 1359142652436480, guid: 0b44b09c6a790a34d9806d4d33b0e48d, type: 2}
   reachable: 0
   timeleft: 1
   range: 3
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  repathRate: 0.5
+  repathRate: 0.1
   canSearch: 1
   canMove: 1
   maxSpeed: 10
@@ -143,7 +143,7 @@ MonoBehaviour:
   endReachedDistance: 3
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 1
+  whenCloseToDestination: 0
   constrainInsideGraph: 0
 --- !u!114 &114662343324356698
 MonoBehaviour:
@@ -187,7 +187,7 @@ MonoBehaviour:
   DMG: 0
   DEF: 0
   speed: 0
-  statModifier: 1.8000002
+  statModifier: 1
   groundBlood: {fileID: 1994265722614450, guid: 7257b314cd793b446a50ff9066dba86c,
     type: 2}
 --- !u!212 &212631874301148234
