@@ -1094,7 +1094,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4016024240462982, guid: b5e00deb6c7f43e45bec6a3ec4be0e38, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.23092583
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 4016024240462982, guid: b5e00deb6c7f43e45bec6a3ec4be0e38, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5793,7 +5793,7 @@ GameObject:
   - component: {fileID: 1485740099}
   m_Layer: 0
   m_Name: map2_img
-  m_TagString: Map
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
