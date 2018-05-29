@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDamaging: 1
   damage: 50
-  speedChange: 50
+  speedChange: 100
   player: {fileID: 0}
 --- !u!210 &210883908264557072
 SortingGroup:

@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  repathRate: 0.5
+  repathRate: 0.1
   canSearch: 1
   canMove: 1
   maxSpeed: 10
@@ -156,7 +156,7 @@ MonoBehaviour:
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
   endReachedDistance: 3
-  alwaysDrawGizmos: 0
+  alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   player: {fileID: 1328073940386146, guid: b3fb1d19f9f6af64d94f961a8c711331, type: 2}
   reachable: 0
   timeleft: 1
-  range: 2.5
+  range: 3
   blood: {fileID: 1460710337789560, guid: 6aa9cf844d4f3e442a00c89864ce5b29, type: 2}
   groundBlood: {fileID: 1151765735867360, guid: 59006f5ed9b8185428cf9cdcb124be6f,
     type: 2}
