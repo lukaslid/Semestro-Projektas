@@ -98,7 +98,7 @@ public class WaveSpawner : MonoBehaviour
     {
         string wave = GameObject.Find("WaveCount").GetComponent<TextMesh>().text;
         double waveCount = Convert.ToDouble(wave);
-        waveCount = waveCount + 0.5;
+        waveCount = waveCount + 0.25;
         GameObject.Find("WaveCount").GetComponent<TextMesh>().text = (waveCount.ToString());
     }
 }
