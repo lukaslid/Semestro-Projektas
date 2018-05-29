@@ -176,7 +176,7 @@ MonoBehaviour:
   DMG: 0
   DEF: 0
   speed: 0
-  statModifier: 0.6
+  statModifier: 0.4
   groundBlood: {fileID: 1994265722614450, guid: 7257b314cd793b446a50ff9066dba86c,
     type: 2}
 --- !u!114 &114877899412316188
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd813b0431ba32e4cb70d06ed731bad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 8
+  movementSpeed: 10
   player: {fileID: 1328073940386146, guid: b3fb1d19f9f6af64d94f961a8c711331, type: 2}
   reachable: 0
   timeleft: 1

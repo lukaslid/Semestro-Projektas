@@ -103,12 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd813b0431ba32e4cb70d06ed731bad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  movementSpeed: 50
   player: {fileID: 0}
   reachable: 0
   timeleft: 1
   range: 3
-  dmgText: {fileID: 1542286562858584, guid: bedef536e64151540a0a0f1dec64f5e8, type: 2}
   blood: {fileID: 1160817685366344, guid: e38b9238ee86262439912be39591cc0c, type: 2}
   groundBlood: {fileID: 1151765735867360, guid: 59006f5ed9b8185428cf9cdcb124be6f,
     type: 2}
@@ -129,7 +128,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 6
+  maxSpeed: 10
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -144,7 +143,7 @@ MonoBehaviour:
   endReachedDistance: 3
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
+  whenCloseToDestination: 1
   constrainInsideGraph: 0
 --- !u!114 &114662343324356698
 MonoBehaviour:
@@ -188,7 +187,7 @@ MonoBehaviour:
   DMG: 0
   DEF: 0
   speed: 0
-  statModifier: 1
+  statModifier: 1.8000002
   groundBlood: {fileID: 1994265722614450, guid: 7257b314cd793b446a50ff9066dba86c,
     type: 2}
 --- !u!212 &212631874301148234

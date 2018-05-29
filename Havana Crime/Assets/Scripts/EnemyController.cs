@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     public GameObject damageText;
     public string monster;
     Animator anim;
+    bool isAttacking = false;
 
     // Use this for initialization
     void Start()
@@ -33,26 +34,32 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void FixedUpdate()
+    { 
 		float distance = Vector3.Distance(transform.position,player.transform.position);
-		if (distance.CompareTo(range) == 1)
+		if (distance.CompareTo(range) == 1f)
         {
             // move
-            pathfinding.canMove = true;
-            timeleft = 0.5f;
-            anim.SetBool("attack", false);
+            if (isAttacking == false)
+            {
+                pathfinding.canMove = true;
+                timeleft = 0.5f;
+                anim.SetBool("attack", false);
+            }
         }
         else
         {
+
             //attack
-            pathfinding.canMove = false;
+            isAttacking = true;
+            pathfinding.canMove = true;
             timeleft -= Time.deltaTime;
             if (timeleft <= 0.0f)
             {
                 player.GetComponent<HealthBar>().TakeDamage(100f);
-                timeleft = 2f;
+                timeleft = 1f;
                 anim.SetBool("attack", true);
+                isAttacking = false;
             }
         }
     }

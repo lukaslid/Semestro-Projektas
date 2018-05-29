@@ -51,16 +51,16 @@ public class PlayerStats : MonoBehaviour
 
         toLevel = toLevel + (int)(toLevel * expModifier);
         currentLevel++;
-        currentHP += 100;
-        transform.GetComponent<HealthBar>().maxHitpoints += 100;
-        transform.GetComponent<HealthBar>().hitpoints += 100;
-        transform.GetComponent<HealthBar>().UpdateHealthBar();
-        currentDMG += 5;
-        currentDEF += 3;
+        //currentHP += 100;
+        //transform.GetComponent<HealthBar>().maxHitpoints += 100;
+        //transform.GetComponent<HealthBar>().hitpoints += 100;
+        //transform.GetComponent<HealthBar>().UpdateHealthBar();
+        //currentDMG += 5;
+        //currentDEF += 3;
         if (currentLevel % 5 == 0)
-            charPoints += 5;
+            charPoints += 2;
         else
-            charPoints += 3;
+            charPoints += 1;
     }
 
     public void SetCharacteristic(string stat)
@@ -75,7 +75,7 @@ public class PlayerStats : MonoBehaviour
             }
             if (stat == "DMG")
             {
-                currentDMG += 5;
+                currentDMG += 1;
                 charPoints--;
             }
             if (stat == "DEF")

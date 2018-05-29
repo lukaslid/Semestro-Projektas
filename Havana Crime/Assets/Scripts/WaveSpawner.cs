@@ -20,10 +20,12 @@ public class WaveSpawner : MonoBehaviour
     public float waveCountdown;
     private SpawnState state = SpawnState.COUNTING;
 
+    float time;
     // Use this for initialization
     void Start()
     {
         waveCountdown = timeBetweenWaves;
+        time = timeBetweenWaves;
     }
 
     // Update is called once per frame
@@ -33,7 +35,7 @@ public class WaveSpawner : MonoBehaviour
 		{
 			if (GameObject.FindGameObjectsWithTag ("Enemy").Length == 0) 
 			{
-				waveCountdown = timeBetweenWaves;
+                waveCountdown = timeBetweenWaves;
 				state = SpawnState.COUNTING;
 				nextWave++;
 			}
@@ -46,16 +48,22 @@ public class WaveSpawner : MonoBehaviour
         {
             if (state == SpawnState.COUNTING)
             {
-				StartCoroutine(SpawnWave());
+                
+                StartCoroutine(SpawnWave());
                 UpdateWaveCount();
             }
         }
         else
         {
             waveCountdown -= Time.deltaTime;
+            if(waveCountdown > 0)
+            GameObject.Find("WaveTimer").GetComponent<TextMesh>().text = waveCountdown.ToString("f0");
+            else GameObject.Find("WaveTimer").GetComponent<TextMesh>().text = "";
         }
 
     }
+
+
 
     IEnumerator SpawnWave()
     {
@@ -74,6 +82,7 @@ public class WaveSpawner : MonoBehaviour
         state = SpawnState.WAITING;
         yield break;
     }
+
 
     public void SpawnEnemy(Transform enemy)
     {
