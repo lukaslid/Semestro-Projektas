@@ -17,8 +17,8 @@ public class EnemyStats : MonoBehaviour {
     public float statModifier;
     public GameObject groundBlood;
 
-    private int baseHP = 50;
-    private int baseDMG = 10;
+    private int baseHP = 40;
+    private int baseDMG = 6;
     private int baseDEF = 1;
     private int baseEXP = 10;
 
